@@ -162,7 +162,8 @@ radiation=["moonlight", "sunlight", "torchlight", "light", "darkness", "lightnin
 feelings=["rage", "lust", "calm", "confusion", "fear", "courage", "love", "regret", "amnesia"]
 minds=["sentient", "non-sentient", ""]
 magnitude=["puny", "slight", "minor", "average", "significant", "strong", "powerful", "extreme", "unbelieveable"]
-bodies=["bird", "humanoid", "serpent", "gorilla", "horse", "centaur", "dragon", "ant", "butterfly", "beetle", "bear", "wolf","boar","squid","angel","turtle","cat","fish","shark","lizard","tortoise","pachyderm of the caster's preference", "being inconceivable to the human mind","sauropod","theropod","dragonfly","bat","pterosaur"]
+bodies=["bird", "humanoid", "serpent", "gorilla", "horse", "centaur", "dragon", "ant", "butterfly", "beetle", "bear", "wolf","boar","squid","angel","turtle","cat","fish",
+        "shark","lizard","tortoise","pachyderm of the caster's preference", "being inconceivable to the human mind","sauropod","theropod","dragonfly","bat","pterosaur","frog"]
 transrules=["They turn back when the creatures body dies.", "They turn back after "+str(randomag()+5)+" minutes.", "They never turn back.",
             "They can turn back at will.","They turn back when "+random.choice(["exposed to "+random.choice(radiation), "touched by "+random.choice(stuff),"looked at"])+"."]
 threats=["kinetic impacts", "high temperatures", "low temperatures", "poison", "acid", "starvation", "thirst", "disease", "intentional attacks", "bad luck", "anything"]
@@ -170,7 +171,8 @@ types=["allies", "enemies", "humans", "humanoids", "animals", "summoned beings",
 directions=["in all directions", "away from the caster(or object)", "towards the caster (or object)", "upwards", "downwards"]
 boosts=["strength", "speed", "stamina", "inteligence", "perceptiveness","coordination"]
 props=[["melting point","degrees"],["boiling point","degrees"],["strength","percent"],["weight","percent"],["reflectivity","percent"]]
-bodypts=["a pair of arms","a pair of legs","a pair of wings","a bunch of tentacles","a pair of horns","a pair of mandibles","a scorpion tail","a tail", "a pair of insectile wings", "antlers", "claws","a set of sharp teeth","fins","a shell","an additional head"]
+bodypts=["a pair of arms","a pair of legs","a pair of wings","a bunch of tentacles","a pair of horns","a pair of mandibles","a scorpion tail","a tail", "a pair of insectile wings", "antlers",
+         "claws","a set of sharp teeth","fins","a shell","an additional head"]
 objects=["A chosen object", "The biggest object", "The most valuable object", "The object the caster is looking at"]
 timescales=["decades", "years","months","weeks", "days", "hours", "minutes", "seconds"]
 colours=["white","black","grey","red","blue","yellow","green","purple","orange","magenta","pink","cyan","turquise","gold-coloured","silver-coloured","transarent","invisible"]
