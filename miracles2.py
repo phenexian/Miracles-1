@@ -83,22 +83,11 @@ def splitpower(power,splits):
     random.shuffle(split)
     return split
 
-def stuffchoice():
-    materials=[]
-    number=random.choice([1,1,1,1,1,1,2,3,4,5,6])
-    for i in range(0, number):
-        material=random.choice(stuff)
-        while material in (i[0] for i in materials):
-            material=random.choice(stuff)
-        material=material.split("-")
-        if len(material)==1:
-            addon=""
-        else:
-            addon=random.choice(["The "+material[0]+" flows freely as normal.", "The "+material[0]+" sustains its shape."])
-        
-        materials.append([material[0],addon])
-
-    return materials
+def stuffsolid(stuff):
+    if stuff in liquid or stuff in gas:
+        return random.choice(["The "+material[0]+" flows freely as normal.", "The "+material[0]+" sustains its shape."])
+    else:
+        return ""
 
 
 def loyalties(plr):
@@ -153,9 +142,11 @@ def printnice(string):
     string=string.replace(".0","")
     print string
 
-stuff=["fire-g", "ice", "wood", "granite", "obsidian", "fresh water-l", "seawater-l", "blood-l", "meat", "air-g", "ash", "glass", "bone", "iron", "bronze",
-       "steel", "silver", "gold", "sand-l", "flesh", "gelatinous ooze-l", "corrosive acid-l", "bile-l", "limestone", "dust-g", "smoke-g", "poisonous gas-g",
-       "paper", "mud-l", "cloth", "lava-l", "hair","honey-l"]
+stuff=["fire", "ice", "wood", "granite", "obsidian", "fresh water", "seawater", "blood", "meat", "air", "ash", "glass", "bone", "iron", "bronze",
+       "steel", "silver", "gold", "sand", "flesh", "gelatinous ooze", "corrosive acid", "bile", "limestone", "dust", "smoke", "poisonous gas",
+       "paper", "mud", "cloth", "lava", "hair","honey"]
+liquid=["fresh water", "seawater", "blood", "gelatinous ooze", "bile", "sand", "corrosive acid", "mud", "lava", "honey"]
+gas=["air","fire","smoke", "dust", "poisonous gas"]
 shapes=["sphere", "square", "blob", "ring", "collumn", "cage", "wall", "dome"]
 vesels=["lungs", "pots","waterskins", "glasses", "cracks", "scabbards", "cups"]
 radiation=["moonlight", "sunlight", "fire-light", "light", "darkness", "lightning","unnatural gravitation"]
@@ -197,7 +188,7 @@ catagory=[stuff, radiation, minds, types, bodypts, vesels]
 def summon(power, scource):
     split=splitpower(power, 3)
     quantity, length, lifetime=round(split[0],0),split[1],split[2]
-    madeof=stuffchoice()
+    madeof=random.choice(stuff)
     bodyshape=random.choice(bodies)
     if quantity<=1:
         thing="creature"
@@ -223,16 +214,16 @@ def summon(power, scource):
         
     a=random.random()
     if a>0.5 and len(addlimbs)!=0:
-        newstuff=stuffchoice()
+        newstuff=random.choice(stuff)
         limbs=listgram(addlimbs)
-        addon=" and "+itthey(plr)+" "+havehas(plr)+" "+limbs+", made of "+newstuff[0][0]
+        addon=" and "+itthey(plr)+" "+havehas(plr)+" "+limbs+", made of "+newstuff
     elif len(addlimbs)!=0:
         limbs=listgram(addlimbs)
         addon=" and "+itthey(plr)+" "+havehas(plr)+" "+limbs
     else:
         addon=""
     
-    return "Summons "+str(quantity)+" "+thing+","+itthey(plr)+" "+isare(plr)+" in the shape of a "+bodyshape+" and "+isare(plr)+" made of "+madeof[0][0]+""".
+    return "Summons "+str(quantity)+" "+thing+","+itthey(plr)+" "+isare(plr)+" in the shape of a "+bodyshape+" and "+isare(plr)+" made of "+madeof+""".
 """+Itthey(plr)+" "+isare(plr)+" "+str(length)+" meters long"+addon+""".
 """+Itthey(plr)+" "+isare(plr)+" summoned "+summon+", within "+str(randomag())+" meters of the "+scource+". Once summoned "+itthey(plr)+" "+last+" "+str(lifetime)+""".
 The """+thing+" "+isare(plr)+loyalties(plr)+"."
@@ -240,7 +231,7 @@ The """+thing+" "+isare(plr)+loyalties(plr)+"."
 def transform(power, source):
     split=splitpower(power, 3)
     quantity, length, lifetime=round(split[0],0),split[1],split[2]
-    madeof=stuffchoice()
+    madeof=random.choice(stuff)
     bodyshape=random.choice(bodies)
     targets, plr=target(source,0)
     
@@ -257,40 +248,46 @@ def transform(power, source):
         
     a=random.random()
     if a>0.5 and len(addlimbs)!=0:
-        newstuff=stuffchoice()
+        newstuff=random.choice(stuff)
         limbs=listgram(addlimbs)
-        addon=" and "+itthey(plr)+" "+havehas(plr)+" "+limbs+", made of "+newstuff[0][0]
+        addon=" and "+itthey(plr)+" "+havehas(plr)+" "+limbs+", made of "+newstuff
     elif len(addlimbs)!=0:
         limbs=listgram(addlimbs)
         addon=" and "+itthey(plr)+" "+havehas(plr)+" "+limbs
     else:
         addon=""
         
-    return "Transforms "+targets+" into "+s("creature",plr)+","+itthey(plr)+" "+isare(plr)+" in the shape of a "+bodyshape+" and "+isare(plr)+" made of "+madeof[0][0]+""".
+    return "Transforms "+targets+" into "+s("creature",plr)+","+itthey(plr)+" "+isare(plr)+" in the shape of a "+bodyshape+" and "+isare(plr)+" made of "+madeof+""".
 """+Itthey(plr)+" "+isare(plr)+" "+str(length)+" meters long"+addon+""".
 The effects lasts """+str(lifetime)+"."
 
 def create(power, source):
-    material=stuffchoice()
+    material=random.choice(stuff)
     shape=random.choice(shapes)
     split=splitpower(power,2)
-    return "In a "+shape+" shaped volume of width "+str(split[0])+" metres, "+material[0][0]+" apears. "+material[0][1]+" This is centred at any point within "+str(2*split[1])+" metres of the "+source+"."
+    return "In a "+shape+" shaped volume of width "+str(split[0])+" metres, "+material+" apears. This is centred at any point within "+str(2*split[1])+" metres of the "+source+"."
 
 def transfigure(power, source):
     split=splitpower(power,2)
     m1,m2=split[0],split[1]
-    from1=stuffchoice()
-    from2=[]
-    for i in from1:
-        from2.append(i[0])
-    to=stuffchoice()[0]
-    while to[0] in from2:
-        to=stuffchoice()[0]
+    from1=[random.choice(stuff)]
+    a=random.random()
+    while a>0.75:
+        newstuff=random.choice(stuff)
+        if newstuff in from1:
+            a=0
+        else:
+            from1.append(newstuff)
+            a=random.random()
+    
+    to=random.choice(stuff)
+    while to in from1:
+        to=random.choice(stuff)
         
-    from2=listgram(from2)
+    from1=listgram(from1)
     shape=random.choice(shapes)
 
-    return "In a "+shape+" shaped volume of width "+str(m1)+" metres, all "+from2+" is turned to "+to[0]+"."+to[1]+" This is centred at any point within "+str(m2)+" metres of the "+source+"."
+    return "In a "+shape+" shaped volume of width "+str(m1)+" metres, all "+from1+" is turned to "+to+". This is centred at any point within "+str(m2)+" metres of the "+source+"."
 
 def fill(power, source):
     fills=random.choice(vesels)
@@ -508,16 +505,21 @@ def temp(power, source):
 def properties(power, source):
     split=splitpower(power,3)
     m1,m2, m3=split[0],split[1],split[2]
-    material=stuffchoice()
-    material2=[]
-    for item in material:
-        substance=item[0]
-        material2.append(substance)
-    materials=listgram(material2)
+    from1=[random.choice(stuff)]
+    a=random.random()
+    while a>0.75:
+        newstuff=random.choice(stuff)
+        if newstuff in from1:
+            a=0
+        else:
+            from1.append(newstuff)
+            a=random.random()
+            
+    from1=listgram(from1)
     thing=random.choice(props)
     direction=random.choice(["increased", "decreased"])
     shape=random.choice(shapes)
-    return "All "+materials+" in a "+shape+" shaped region of width "+str(m1+0.5)+" metres has its "+thing[0]+" "+direction+" by "+str(m2+0.5)+" "+thing[1]+". This is centred at a point in "+str(m3)+" metres of the "+source+"."
+    return "All "+from1+" in a "+shape+" shaped region of width "+str(m1+0.5)+" metres has its "+thing[0]+" "+direction+" by "+str(m2+0.5)+" "+thing[1]+". This is centred at a point in "+str(m3)+" metres of the "+source+"."
 
 def sprout(power, source):
     part=random.choice(bodypts)
@@ -534,10 +536,8 @@ def sprout(power, source):
         else:
             extra1=", they"+" are imobile and inanimate"
             
-        material2=stuffchoice()
-        if material2=="":
-            made="made of "+material2[0][0]+"."
-        else:made="made of "+material2[0][0]+". "+material2[0][1]
+        material2=random.choice(stuff)
+        made="made of "+material2+". "+stuffsolid(stuff)
     targets=targets.replace("and","or")
         
     return targets+" "+invs("grow",plr)+" "+part+" "+made+" They last "+str(power)+" minutes"+extra1+"."
@@ -560,8 +560,8 @@ def transfigure2(power, source):
     else:
         extra1=" They"+" are no longer animated"
 
-    material2=stuffchoice()
-    made=material2[0][0]+". "+material2[0][1]
+    material2=random.choice(stuff)
+    made=material2+". "+stuffsolid(stuff)
     
     return "In a "+shape+" shaped volume of width "+str(m1)+" metres within "+str(m2)+" meters of the "+source+", all "+material1+" are turned to "+made+extra1+"."
 
@@ -572,12 +572,12 @@ def blast(power, source):
 
     a=random.random()
     if a>0.5:
-        material=stuffchoice()
-        made="made of "+material[0][0]+". "+material[0][1]
+        material=random.choice(stuff)
+        made="made of "+material+". "+stuffsolid(stuff)
     else:
         made=""
          
-    return "Fires "+str(m1)+" "+random.choice(things)+"(s) "+made+". They fade away after "+str(m3)+" minutes at "+str(3*m2)+" metres per second, away from the "+source+"."
+    return "Fires "+str(m1)+" "+random.choice(things)+"(s) "+made+" They fade away after "+str(m3)+" minutes at "+str(3*m2)+" metres per second, away from the "+source+"."
     
 def transfigure3(power, source):
     thing1=random.choice(things)
@@ -588,8 +588,8 @@ def transfigure3(power, source):
 
     a=random.random()
     if a>0.75:
-        material=stuffchoice()
-        made=" made of "+material[0][0]+". "+material[0][1]
+        material=random.choice(stuff)
+        made=" made of "+material+". "+stuffsolid(stuff)
     else:
         made=""
 
@@ -637,9 +637,13 @@ def ethereal(power, source):
             target=random.choice(things)+"s"
         else:
             target=random.choice(types)
-        return "All"+target+"within "+str(m2+1)+" metres of the "+source+" become "+effect+" for "+str(m1+0.1)+" minutes."
+        return "All "+target+" within "+str(m2+1)+" metres of the "+source+" become "+effect+" for "+str(m1+0.1)+" minutes."
 
     else:
+        if a>0.25:
+            target="object"
+        else:
+            target=random.choice(things)
         return "A chosen "+target+" within "+str(m2+1)+" meters of the "+source+" with a mass no greater than "+str(m1*2)+" kilos becomes "+effect+"."
 
 def mindmatter(power, source):
@@ -647,14 +651,18 @@ def mindmatter(power, source):
     m1,m2=split[0],split[1]
     targets,plr=target(source,1)
     way=random.choice(["using their minds", "using hand gestures", "by commanding it verbally", "by playing musical instruments (it dances to their tunes)"])
-    material=stuffchoice()
-    material2=[]
-    for item in material:
-        substance=item[0]
-        material2.append(substance)
-    materials=listgram(material2)
-    
-    return targets+" "+invs("gain",plr)+" the ability to control "+materials+" within "+str(m1)+" metres of themselves "+way+". This lasts for "+str(m2)+" minutes."
+    from1=[random.choice(stuff)]
+    a=random.random()
+    while a>0.75:
+        newstuff=random.choice(stuff)
+        if newstuff in from1:
+            a=0
+        else:
+            from1.append(newstuff)
+            a=random.random()
+            
+    from1=listgram(from1)
+    return targets+" "+invs("gain",plr)+" the ability to control "+from1+" within "+str(m1)+" metres of themselves "+way+". This lasts for "+str(m2)+" minutes."
 
 def recolour(power, source):
     split=splitpower(power,2)
@@ -742,7 +750,7 @@ def item(power, source):
 
     ans=random.choice(objects)+" within "+str(m1)+" metres of the "+source+""" gains the property such that each time it is activated:
     """+ans+"""
-It is activated whenever"""+random.choice(triggers)
+It is activated whenever """+random.choice(triggers)
     return ans
 
 def hyperspell(power,source):
