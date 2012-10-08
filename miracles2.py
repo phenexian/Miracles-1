@@ -327,11 +327,16 @@ def detonate(power,source):
     split=splitpower(power,2)
     m1,m2=split[0],split[1]
     a=random.random()
-    if a>0.4:
-        detonation="explosion"
+    if a>0.5:
+        detonation="an explosion"
+        madness=""
+    elif a>0.2:
+        detonation="an implosion"
+        madness=""
     else:
-        detonation="implosion"
-    return "There is an "+detonation+" of radius "+str(m1+1)+" metres centred at a chosen point within "+str(m2+1)+" metres of the "+source+"."
+        madness=random.choice(["gravity to reverse", "space to fold in on itself", "a wormhole to another dimension to open", "time to freeze", "space to be removed from reality and enclosed in its own pocket dimension"])
+        detonation="a disruption in the laws of physics causing "+madness+" for "+str(randomag()+5)+" "+random.choice(timescales)+" in an area"
+    return "There is "+detonation+" of radius "+str(m1+1)+" metres centred at a chosen point within "+str(m2+1)+" metres of the "+source+"."
 
 def portal(power,source):
     split=splitpower(power,3)
@@ -696,6 +701,22 @@ def disease(power,source):
     
     return "A new disease is brought into existance, it's first "+s("victim",plr)+" "+isare(plr)+" "+targets+""".
 The disease causes """+effects+". It is "+contag+". It can be cured by "+cure+"."+extra
+
+def manipulate(power, source):
+    split=splitpower(power,3)
+    m1,m2,m3=split[0],split[1],split[2]
+    a=random.random()
+    if a>0.6:
+        manipulate="levitate up to "+str(m1+1)+" kilos of "+random.choice(stuff)+" and move it freely in any direction"
+    elif a>0.2:
+        manipulate="levitate up to "+str(m1+1)+" kilos of "+random.choice(stuff)+" and manipulate it with precision"
+    else:
+        manipulate="levitate all "+random.choice(things)+"s and move them freely in any direction"
+    if source=="item":
+        self="user of the item"
+    else:
+        self=source
+    return "For the next "+str(randomag()+5)+" minutes the "+self+" can "+manipulate+" at a maximum speed of "+str(m3)+" metres per second, within "+str(3*m2)+" metres"
 
 def delay(power,source):
     m3=randomag()
