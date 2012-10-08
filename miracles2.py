@@ -156,33 +156,33 @@ def printnice(string):
 stuff=["fire-g", "ice", "wood", "granite", "obsidian", "fresh water-l", "seawater-l", "blood-l", "meat", "air-g", "ash", "glass", "bone", "iron", "bronze",
        "steel", "silver", "gold", "sand-l", "flesh", "gelatinous ooze-l", "corrosive acid-l", "bile-l", "limestone", "dust-g", "smoke-g", "poisonous gas-g",
        "paper", "mud-l", "cloth", "lava-l", "hair","honey-l"]
-shapes=["sphere", "square", "blob", "ring", "collumn", "cage", "wall", "dome"]
-vesels=["lungs", "pots","waterskins", "glasses", "cracks", "scabbards", "cups"]
-radiation=["moonlight", "sunlight", "fire-light", "light", "darkness", "lightning","unnatural gravitation"]
+shapes=["sphere", "cube", "blob", "ring", "collumn", "cage", "wall", "dome", "shard"]
+vesels=["lungs", "pots","waterskins", "glasses", "cracks", "scabbards", "cups", "teapots", "flasks", "barrels", "bowls", "chests", "cupboards","quivers","helmets","armour"]
+radiation=["moonlight", "sunlight", "torchlight", "light", "darkness", "lightning","unnatural gravitation","starlight","wind"]
 feelings=["rage", "lust", "calm", "confusion", "fear", "courage", "love", "regret", "amnesia"]
 minds=["sentient", "non-sentient", ""]
 magnitude=["puny", "slight", "minor", "average", "significant", "strong", "powerful", "extreme", "unbelieveable"]
-bodies=["bird", "humanoid", "serpent", "gorilla", "horse", "centaur", "dragon", "ant", "butterfly", "beetle", "bear", "wolf","boar","squid","angel","turtle","cat","fish","shark","lizard","tortoise","pachyderm of the caster's preference", "being inconceivable to the human mind"]
+bodies=["bird", "humanoid", "serpent", "gorilla", "horse", "centaur", "dragon", "ant", "butterfly", "beetle", "bear", "wolf","boar","squid","angel","turtle","cat","fish","shark","lizard","tortoise","pachyderm of the caster's preference", "being inconceivable to the human mind","sauropod","theropod","dragonfly","bat","pterosaur"]
 transrules=["They turn back when the creatures body dies.", "They turn back after "+str(randomag()+5)+" minutes.", "They never turn back.",
-            "They can turn back at will."]
+            "They can turn back at will.","They turn back when "+random.choice(["exposed to "+random.choice(radiation), "touched by "+random.choice(stuff),"looked at"])+"."]
 threats=["kinetic impacts", "high temperatures", "low temperatures", "poison", "acid", "starvation", "thirst", "disease", "intentional attacks", "bad luck", "anything"]
 types=["allies", "enemies", "humans", "humanoids", "animals", "summoned beings", "humans and anmials","undead beings","animated objects"]
 directions=["in all directions", "away from the caster(or object)", "towards the caster (or object)", "upwards", "downwards"]
 boosts=["strength", "speed", "stamina", "inteligence", "perceptiveness","coordination"]
 props=[["melting point","degrees"],["boiling point","degrees"],["strength","percent"],["weight","percent"],["reflectivity","percent"]]
-bodypts=["a pair of arms","a pair of legs","a pair of wings","a bunch of tentacles","a pair of horns","a pair of mandibles","a scorpion tail","a tail", "a pair of insectile wings", "antlers", "claws"]
+bodypts=["a pair of arms","a pair of legs","a pair of wings","a bunch of tentacles","a pair of horns","a pair of mandibles","a scorpion tail","a tail", "a pair of insectile wings", "antlers", "claws","a set of sharp teeth","fins","a shell","an additional head"]
 objects=["A chosen object", "The biggest object", "The most valuable object", "The object the caster is looking at"]
 timescales=["decades", "years","months","weeks", "days", "hours", "minutes", "seconds"]
 colours=["white","black","grey","red","blue","yellow","green","purple","orange","magenta","pink","cyan","turquise","gold-coloured","silver-coloured","transarent","invisible"]
 triggers=["destroyed", "brandished", "exposed to "+random.choice(radiation), "touched by "+random.choice(stuff),"looked at",
-          "intentionally used by anyone holding it", "intentionally used by its crerator holding it", "touched by a "+random.choice(colours)+" object"]
+          "intentionally used by anyone holding it", "intentionally used by its crerator holding it", "touched by a "+random.choice(colours)+" object","polished"]
 things=["sword","spear","axe","dagger","arrow","bow","cup","orb","teapot","flower","rake","spade","wig","hat","belt",
         "ring","crown","shoe","glove","fruit","fork","vegetable","table","helmet","book","carpet","key","pot","scabbard",
-        "waterskin","bowl","torch","lamp","rope","boulder","pitchfork","cloak","bird", "human","serpent","gorilla","horse","centaur",
-        "dragon","ant","butterfly","beetle","bear", "wolf","boar","squid","angel","turtle","cat","fish","shark","lizard","tortoise",
-        "pachyderm of the caster's preference"]
+        "waterskin","bowl","torch","lamp","rope","boulder","pitchfork","cloak","bird","human","serpent","gorilla","horse","centaur",
+        "dragon","ant","butterfly","beetle","bear","wolf","boar","squid","angel","turtle","cat","fish","shark","lizard","tortoise",
+        "weapon", "cross-bow", "candle", "mace", "firearm", "belt", "lance", "barrel", "flask", "hilt","knife","bat", "pterosaur","dragonfly","frog"]
 livingthings=["bird", "human","serpent","gorilla","horse","centaur","dragon","ant","butterfly","beetle","bear", "wolf","boar","squid"
-              ,"angel","turtle","cat","fish","shark","lizard","tortoise","pachyderm of the caster's preference"]
+              ,"angel","turtle","cat","fish","shark","lizard","tortoise","bat","pterosaur","dragonfly","frog"]
 ailments=[random.choice(colours)+" boils", random.choice(colours)+" rashes", "vomiting", "diarrhea","victims' teeth to fall out","headaches","disoreintation","exhaustion",
           "hair loss", "infertility", "pregnancy","coughing"]
 spells=["create", "transfigure", "fill", "emotion", "summon", "transform", "protect", "radiate", "necro", "hyperspell",
