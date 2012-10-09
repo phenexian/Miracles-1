@@ -121,7 +121,7 @@ def target(source, cap):
         targets=targets[0].capitalize()+targets[1:]
     return targets, plr
 
-def listconstruct(lst, morethan)
+def listconstruct(lst, morethan):
     thelist=[random.choice(lst)]
     a=random.random()
     while a>morethan:
@@ -174,7 +174,8 @@ types=["allies", "enemies", "humans", "humanoids", "animals", "summoned beings",
 directions=["in all directions", "away from the caster(or object)", "towards the caster (or object)", "upwards", "downwards"]
 boosts=["strength", "speed", "stamina", "inteligence", "perceptiveness","coordination"]
 props=[["melting point","degrees"],["boiling point","degrees"],["strength","percent"],["weight","percent"],["reflectivity","percent"]]
-bodypts=["a pair of arms","a pair of legs","a pair of wings","a bunch of tentacles","a pair of horns","a pair of mandibles","a scorpion tail","a tail", "a pair of insectile wings", "antlers", "claws"]
+bodypts=["a pair of arms","a pair of legs","a pair of wings","a bunch of tentacles","a pair of horns","a pair of mandibles","a scorpion tail","a tail","a pair of insectile wings",
+         "antlers", "claws","spines","a pair of mantis weapons","a pair of pincers","a bunch of armoured plates","a mane","a turtle-like shell"]
 objects=["A chosen object", "The biggest object", "The most valuable object", "The object the caster is looking at"]
 timescales=["decades", "years","months","weeks", "days", "hours", "minutes", "seconds"]
 colours=["white","black","grey","red","blue","yellow","green","purple","orange","magenta","pink","cyan","turquise","gold-coloured","silver-coloured","transarent","invisible"]
@@ -189,9 +190,9 @@ livingthings=["bird", "human","serpent","gorilla","horse","centaur","dragon","an
               ,"angel","turtle","cat","fish","shark","lizard","tortoise","pachyderm of the caster's preference"]
 ailments=[random.choice(colours)+" boils", random.choice(colours)+" rashes", "vomiting", "diarrhea","victims' teeth to fall out","headaches","disoreintation","exhaustion",
           "hair loss", "infertility", "pregnancy","coughing"]
-spells=["create", "transfigure", "fill", "emotion", "summon", "transform", "protect", "radiate", "necro", "hyperspell",
-        "negate", "blind", "heroup", "detonate", "item", "delay", "portal", "temp", "properties", "sprout", "mechro","banish",
-        "forced","transfigure2", "blast", "transfigure3", "weather", "ethereal","mindmatter","recolour","disease","flash"]
+spells=["create","transfigure","fill","emotion","summon","transform","protect", "radiate","necro","hyperspell",
+        "negate","blind","heroup","detonate","item","delay","portal","temp","properties","sprout","mechro","banish",
+        "forced","transfigure2","blast","transfigure3","weather","ethereal","mindmatter","recolour","disease","flash","controled"]
 
 metaspells=["hyperspell","item", "delay","forced"]
 
@@ -564,6 +565,10 @@ def blast(power, source):
     split=splitpower(power,3)
     m1,m2,m3=split[0],split[1],split[2]
     m1=round(math.log(m1+1),0)
+    if m1<1:
+        plr=0
+    else:
+        plr=1
 
     a=random.random()
     if a>0.5:
@@ -571,11 +576,11 @@ def blast(power, source):
         made="made of "+material+". "+stuffsolid(stuff)
     else:
         made=""
-         
-    return "Fires "+str(m1)+" "+random.choice(things)+"(s) "+made+" They fade away after "+str(m3)+" minutes at "+str(3*m2)+" metres per second, away from the "+source+"."
+
+    return "Fires "+str(m1)+" "+s(random.choice(things),plr)+" "+made+" "+" metres per second, away from the "+source+"."+Itthey(plr)+" "+invs("fade",plr)+" away after "+str(m3)+" minutes at "+str(3*m2)
     
 def transfigure3(power, source):
-    thing1=listcontsruct(things,0.9)
+    thing1=listconstruct(things,0.9)
     thing2=random.choice(things)
 
     while thing2 in thing1:
@@ -645,39 +650,30 @@ def mindmatter(power, source):
     split=splitpower(power,2)
     m1,m2=split[0],split[1]
     targets,plr=target(source,1)
-    way=random.choice(["using their minds", "using hand gestures", "by commanding it verbally", "by playing musical instruments (it dances to their tunes)"])
-    from1=listcontsruct(stuff,0.75)
+    way=random.choice(["using their "+s("mind",plr), "using hand gestures", "by commanding it verbally", "by playing musical instruments (it dances to "+itstheir(plr)+" tunes)"])
+    from1=listconstruct(stuff,0.75)
     return targets+" "+invs("gain",plr)+" the ability to control "+from1+" within "+str(m1)+" metres of themselves "+way+". This lasts for "+str(m2)+" minutes."
 
 def recolour(power, source):
     split=splitpower(power,2)
     m1,m2=split[0],split[1]
-    from1=listcontsruct(stuff,0.5)
+    froms=listconstruct(colours,0.5)
 
     to=random.choice(colours)
-    while to in from1:
+    while to in froms:
         to=random.choice(colours)
 
-    froms=listgram(from1)
     return "Everything "+froms+" within "+str(m1)+" meters of the "+source+" becomes "+to+" for "+str(m2)+" "+random.choice(timescales)+"."
 
 def disease(power,source):
     targets,plr=target(source,0)
 
-    effects=[random.choice(ailments)]
-    a=random.random()
-    while a>0.5:
-        newailment=random.choice(ailments)
-        if newailment in effects:
-            a=0
-        else:
-            effects.append(newailment)
-            a=random.random()
+    effects=listconstruct(ailments,0.5)
+
     if "pregnancy" in effects:
-        extra="If any beings (male or female) who become pregnant from this ailment give birth then the child will be the shape of a "+random.choice(bodies)+" they will be of normal size and inteligance for their parents species."
+        extra="If any beings (male or female) who become pregnant from this ailment give birth then the child will be the shape of a "+random.choice(bodies)+", they will be of normal size and inteligance for their parents species."
     else:extra=""
     
-    effects=listgram(effects)
     contag=random.choice(["contagous by touch", "contagous through the air", "contagous through eye contact", "not contagous at all", "contagous via intercourse",
                          "contagous by verbal comunication","contagous through written comunication", "contagous by contact with infected blood"])
 
