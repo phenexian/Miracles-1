@@ -192,7 +192,8 @@ ailments=[random.choice(colours)+" boils", random.choice(colours)+" rashes", "vo
           "hair loss", "infertility", "pregnancy","coughing"]
 spells=["create","transfigure","fill","emotion","summon","transform","protect", "radiate","necro","hyperspell",
         "negate","blind","heroup","detonate","item","delay","portal","temp","properties","sprout","mechro","banish",
-        "forced","transfigure2","blast","transfigure3","weather","ethereal","mindmatter","recolour","disease","flash","controled"]
+        "forced","transfigure2","blast","transfigure3","weather","ethereal","mindmatter","recolour","disease","flash",
+        "controled","manipulate","age"]
 
 metaspells=["hyperspell","item", "delay","forced"]
 
@@ -699,6 +700,21 @@ def manipulate(power, source):
     else:
         self=source
     return "For the next "+str(randomag()+5)+" minutes the "+self+" can "+manipulate+" at a maximum speed of "+str(m3)+" metres per second, within "+str(3*m2)+" metres"
+
+def age(power, source):
+    a=random.random()
+    if a>0.5:
+        targets, plr=target(source, 1)
+    else:
+        targets="All "+random.choice(things)+" within "+str(randommag)+" meters of the "+source
+        plr=1
+    direction=random.choice(["increased","decreased"])
+
+    a=random.random()
+    if a>0.8:
+        return targets+" fill from now on "+random.choice(["age at twice the rate","age at twice the rate","not age at all","grow younger at a rate of 1 year per year"])+"."
+    else:
+        return targets+" "+havehas(plr)+" "+itstheir(plr)+" phyical age "+direction+" by "+str(power)+" years."
 
 def delay(power,source):
     m3=randomag()
