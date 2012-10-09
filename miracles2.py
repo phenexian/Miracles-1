@@ -121,6 +121,19 @@ def target(source, cap):
         targets=targets[0].capitalize()+targets[1:]
     return targets, plr
 
+def listconstruct(lst, morethan, )
+    thelist=[random.choice(lst)]
+    a=random.random()
+    while a>morethan:
+        newitem=random.choice(lst)
+        if newitem in thelist:
+            a=0
+        else:
+            thelist.append(newitem)
+            a=random.random()
+
+    return listgram(thelist)
+
 def duration(plr, time):
     a=random.random()
     if a>0.9:
@@ -270,21 +283,12 @@ def create(power, source):
 def transfigure(power, source):
     split=splitpower(power,2)
     m1,m2=split[0],split[1]
-    from1=[random.choice(stuff)]
-    a=random.random()
-    while a>0.75:
-        newstuff=random.choice(stuff)
-        if newstuff in from1:
-            a=0
-        else:
-            from1.append(newstuff)
-            a=random.random()
+    from1=listconstruct(stuff,0.75)
     
     to=random.choice(stuff)
     while to in from1:
         to=random.choice(stuff)
-        
-    from1=listgram(from1)
+
     shape=random.choice(shapes)
 
     return "In a "+shape+" shaped volume of width "+str(m1)+" metres, all "+from1+" is turned to "+to+". This is centred at any point within "+str(m2)+" metres of the "+source+"."
@@ -505,17 +509,8 @@ def temp(power, source):
 def properties(power, source):
     split=splitpower(power,3)
     m1,m2, m3=split[0],split[1],split[2]
-    from1=[random.choice(stuff)]
-    a=random.random()
-    while a>0.75:
-        newstuff=random.choice(stuff)
-        if newstuff in from1:
-            a=0
-        else:
-            from1.append(newstuff)
-            a=random.random()
-            
-    from1=listgram(from1)
+    from1=listconstruct(stuff,0.75)
+
     thing=random.choice(props)
     direction=random.choice(["increased", "decreased"])
     shape=random.choice(shapes)
@@ -580,10 +575,10 @@ def blast(power, source):
     return "Fires "+str(m1)+" "+random.choice(things)+"(s) "+made+" They fade away after "+str(m3)+" minutes at "+str(3*m2)+" metres per second, away from the "+source+"."
     
 def transfigure3(power, source):
-    thing1=random.choice(things)
+    thing1=listcontsruct(things,0.9)
     thing2=random.choice(things)
 
-    while thing1==thing2:
+    while thing2 in thing1:
         thing2=random.choice(things)
 
     a=random.random()
@@ -594,7 +589,6 @@ def transfigure3(power, source):
         made=""
 
     a=random.random()
-
     if a>0.5:
         return "All "+thing1+"s are turned into "+thing2+"s"+made+" within "+str(power+1)+" metres of the "+source
     else:
@@ -608,6 +602,7 @@ def transfigure3(power, source):
 It is activated whenever """+random.choice(triggers)
         else:
             ans=""
+        thing1=thing1.replace(" and "," or ")
         return "A chosen "+thing1+" is turned into a "+thing2+made+" This happens within "+str(power)+" metres of the "+source+""".
 """+ans
     
@@ -651,31 +646,14 @@ def mindmatter(power, source):
     m1,m2=split[0],split[1]
     targets,plr=target(source,1)
     way=random.choice(["using their minds", "using hand gestures", "by commanding it verbally", "by playing musical instruments (it dances to their tunes)"])
-    from1=[random.choice(stuff)]
-    a=random.random()
-    while a>0.75:
-        newstuff=random.choice(stuff)
-        if newstuff in from1:
-            a=0
-        else:
-            from1.append(newstuff)
-            a=random.random()
-            
-    from1=listgram(from1)
+    from1=listcontsruct(stuff,0.75)
     return targets+" "+invs("gain",plr)+" the ability to control "+from1+" within "+str(m1)+" metres of themselves "+way+". This lasts for "+str(m2)+" minutes."
 
 def recolour(power, source):
     split=splitpower(power,2)
     m1,m2=split[0],split[1]
-    from1=[random.choice(colours)]
-    a=random.random()
-    while a>0.5:
-        newcolour=random.choice(colours)
-        if newcolour in from1:
-            a=0
-        else:
-            from1.append(newcolour)
-            a=random.random()
+    from1=listcontsruct(stuff,0.5)
+
     to=random.choice(colours)
     while to in from1:
         to=random.choice(colours)
