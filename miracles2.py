@@ -424,7 +424,7 @@ def mechro(power,source):
 
     lifetime=duration(plr, m2)
 
-    return targets+" "+isare(plr)+" animated, "+levitate+". "+Itthey(plr)+" "+isare(plr)+loyalty+" , "+itthey(plr)+" remain animated "+str(lifetime)+"."
+    return targets+" "+isare(plr)+" animated, "+levitate+". "+Itthey(plr)+" "+isare(plr)+loyalty+" , "+itthey(plr)+" "+invs("remain",plr)+" animated "+str(lifetime)+"."
 
 def banish(power,source):
     typ=[random.choice(["undead being", "animated object", "summoned creature"])]
@@ -594,7 +594,6 @@ def transfigure3(power, source):
         made=""
 
     a=random.random()
-
     if a>0.5:
         return "All "+thing1+"s are turned into "+thing2+"s"+made+" within "+str(power+1)+" metres of the "+source
     else:
