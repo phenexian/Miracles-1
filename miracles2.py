@@ -121,7 +121,7 @@ def target(source, cap):
         targets=targets[0].capitalize()+targets[1:]
     return targets, plr
 
-def listconstruct(lst, morethan, )
+def listconstruct(lst, morethan)
     thelist=[random.choice(lst)]
     a=random.random()
     while a>morethan:
