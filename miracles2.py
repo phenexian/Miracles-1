@@ -10,6 +10,7 @@ def randomag():
     res=res+random.random()*7
     length=int(math.log10(res))
     loosedigits=length-1
+    res=round(res,1)
 
     return round(res,-loosedigits)
 
@@ -188,12 +189,13 @@ things=["sword","spear","axe","dagger","arrow","bow","cup","orb","teapot","flowe
         "pachyderm of the caster's preference"]
 livingthings=["bird", "human","serpent","gorilla","horse","centaur","dragon","ant","butterfly","beetle","bear", "wolf","boar","squid"
               ,"angel","turtle","cat","fish","shark","lizard","tortoise","pachyderm of the caster's preference"]
+plants=["grass","daisies","oak trees","pine trees","willow trees","palm trees","roses","elm trees","nettles","bushes","vines","sunflowers","cactai","thistles","mushrooms","liles"]
 ailments=[random.choice(colours)+" boils", random.choice(colours)+" rashes", "vomiting", "diarrhea","victims' teeth to fall out","headaches","disoreintation","exhaustion",
           "hair loss", "infertility", "pregnancy","coughing"]
 spells=["create","transfigure","fill","emotion","summon","transform","protect", "radiate","necro","hyperspell",
         "negate","blind","heroup","detonate","item","delay","portal","temp","properties","sprout","mechro","banish",
         "forced","transfigure2","blast","transfigure3","weather","ethereal","mindmatter","recolour","disease","flash",
-        "controled","manipulate","age"]
+        "controled","manipulate","age","garden"]
 
 metaspells=["hyperspell","item", "delay","forced"]
 
@@ -367,7 +369,7 @@ def radiate(power,source):
         targets="the "+source
     else:
         targets="a target point in "+str(m1)+" metres of the "+source
-    return "Causes the emision of "+mag+" "+emision+" "+direction+" for "+str(m2+5)+" minutes, from "+targets
+    return "Causes the emision of "+mag+" "+emision+" "+direction+" for "+str(m2+5)+" minutes, from "+targets+"."
 
 def necro(power,source):
     split=splitpower(power,2)
@@ -578,7 +580,7 @@ def blast(power, source):
     else:
         made=""
 
-    return "Fires "+str(m1)+" "+s(random.choice(things),plr)+" "+made+" "+" metres per second, away from the "+source+"."+Itthey(plr)+" "+invs("fade",plr)+" away after "+str(m3)+" minutes at "+str(3*m2)
+    return "Fires "+str(m1)+" "+s(random.choice(things),plr)+" "+made+" at "+str(3*m2)+" metres per second, away from the "+source+"."+Itthey(plr)+" "+invs("fade",plr)+" away after "+str(m3)+" minutes."
     
 def transfigure3(power, source):
     thing1=listconstruct(things,0.9)
@@ -596,7 +598,7 @@ def transfigure3(power, source):
 
     a=random.random()
     if a>0.5:
-        return "All "+thing1+"s are turned into "+thing2+"s"+made+" within "+str(power+1)+" metres of the "+source
+        return "All "+thing1+"s whithin "+str(power+1)+"meters of the "+source+" are turned into "+thing2+"s"+made+"."
     else:
         a=random.random()
         if a>0.75:
@@ -605,11 +607,11 @@ def transfigure3(power, source):
             exec("ans="+spell+"(power,thing2)")
             ans="The "+thing2+""" has the property that each time it is activated:
     """+ans+"""
-It is activated whenever """+random.choice(triggers)
+It is activated whenever """+random.choice(triggers)+"."
         else:
             ans=""
         thing1=thing1.replace(" and "," or ")
-        return "A chosen "+thing1+" is turned into a "+thing2+made+" This happens within "+str(power)+" metres of the "+source+""".
+        return "A chosen "+thing1+" within "+str(power)+" metres of the "+source+" is turned into a "+thing2+made+""".
 """+ans
     
 def weather(power,source):
@@ -690,31 +692,58 @@ def manipulate(power, source):
     m1,m2,m3=split[0],split[1],split[2]
     a=random.random()
     if a>0.6:
-        manipulate="levitate up to "+str(m1+1)+" kilos of "+random.choice(stuff)+" and move it freely in any direction"
+        manipulated="levitate up to "+str(m1+1)+" kilos of "+random.choice(stuff)+" and move it freely in any direction"
     elif a>0.2:
-        manipulate="levitate up to "+str(m1+1)+" kilos of "+random.choice(stuff)+" and manipulate it with precision"
+        manipulated="levitate up to "+str(m1+1)+" kilos of "+random.choice(stuff)+" and manipulate it with precision"
     else:
-        manipulate="levitate all "+random.choice(things)+"s and move them freely in any direction"
+        manipulated="levitate all "+random.choice(things)+"s and move them freely in any direction"
     if source=="item":
         self="user of the item"
     else:
         self=source
-    return "For the next "+str(randomag()+5)+" minutes the "+self+" can "+manipulate+" at a maximum speed of "+str(m3)+" metres per second, within "+str(3*m2)+" metres"
+    return "For the next "+str(randomag()+5)+" minutes the "+self+" can "+manipulated+" at a maximum speed of "+str(m3)+" metres per second, within "+str(3*m2)+" metres"
 
 def age(power, source):
     a=random.random()
     if a>0.5:
         targets, plr=target(source, 1)
     else:
-        targets="All "+random.choice(things)+" within "+str(randommag)+" meters of the "+source
+        targets="All "+random.choice(things)+"s within "+str(randomag())+" meters of the "+source
         plr=1
     direction=random.choice(["increased","decreased"])
 
     a=random.random()
     if a>0.8:
-        return targets+" fill from now on "+random.choice(["age at twice the rate","age at twice the rate","not age at all","grow younger at a rate of 1 year per year"])+"."
+        return targets+" will from now on "+random.choice(["age at twice the rate","age at twice the rate","not age at all","grow younger at a rate of 1 year per year"])+"."
     else:
         return targets+" "+havehas(plr)+" "+itstheir(plr)+" phyical age "+direction+" by "+str(power)+" years."
+
+def garden(power, source):
+    plant=random.choice(plants)
+    adject=random.choice(["carnivorous","stinging ","posionous", "dead", random.choice(colours), "","bonsai","pleasant smelling","fruit bearing","fully mobile and sentient"])
+    if adject=="fully mobile and sentient":
+        addon="They are"+loyalties(1)
+    else:
+        addon=""
+    appear=random.choice(["burst from the ground","pop into existance", "grow rapidly out of the ground", "appear through portals that snap shut behind them"])
+
+    a=random.random()
+    if a>0.75:
+        when=""
+    elif a>0.5:
+        when="When the "+plant+" are burned "+random.choice(["their combustion emits cold, not heat","the flames are "+random.choice(colours),"the smoke is "+random.choice(colours),"they scream","they sing"])+"."
+    elif a>0.25:
+        effect=random.choice(["they cause halucinations","they are medicinal","they are negativly nourishing (meaning that their consumption acceletates starvation)","manipulate"])
+        if effect=="manipulate":
+            exec("""effect=manipulate(power, "the consumer")""")
+            effect=effect.lower()
+        when="When the "+plant+" are consumed "+effect+"."
+    else:
+        effect=random.choice(["they turn "+random.choice(colours),"they explode","they implode","they glow "+random.choice(colours),"they transform into "+random.choice(things)+"s"])
+        when="When the "+plant+" are exposed to "+random.choice(radiation)+" "+effect+"."
+
+    
+    return "Within a "+str(power)+" radius of the "+source+" "+adject+" "+plant+" "+appear+". "+when
 
 def delay(power,source):
     m3=randomag()
@@ -801,7 +830,7 @@ def controled(power, source):
         spell=random.choice(spells)
     exec("ans="+spell+"(power, source)")
     if source=="item":source="user of the item"
-    return "The "+source+""" has a high degree of control over the following miracle, as it occurs they may reduce any of its magnitudes by as much as they desire.
+    return "The "+source+""" has a high degree of control over the following miracle, as it occurs they may reduce any of it's magnitudes by as much as they desire.
 """+ans
 
 def miracle():
