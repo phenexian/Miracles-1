@@ -10,9 +10,9 @@ def randomag():
     res=res+random.random()*7
     length=int(math.log10(res))
     loosedigits=length-1
-    res=round(res,1)
+    res=round(res,-loosedigits)
 
-    return round(res,-loosedigits)
+    return round(res,1)
 
 def listgram(lst):
     if len(lst)==1:
@@ -73,6 +73,14 @@ def s(word,plr):
     if plr==1:
         word=word+"s"
     return word
+
+def interp(ans):
+    if ans in ["yes","y","Y","Yes","yeah","1"]: ans=1
+    elif ans in ["no","n","N","NO","nah","0"]: ans=0
+    else:
+        ans=raw_input("Sorry, yes or no(y/n)?: ")
+        interp(ans)
+    return ans
 
 def splitpower(power,splits):
     split=[]
@@ -158,44 +166,44 @@ def printnice(string):
 
 stuff=["fire", "ice", "wood", "granite", "obsidian", "fresh water", "seawater", "blood", "meat", "air", "ash", "glass", "bone", "iron", "bronze",
        "steel", "silver", "gold", "sand", "flesh", "gelatinous ooze", "corrosive acid", "bile", "limestone", "dust", "smoke", "poisonous gas",
-       "paper", "mud", "cloth", "lava", "hair","honey"]
-liquid=["fresh water", "seawater", "blood", "gelatinous ooze", "bile", "sand", "corrosive acid", "mud", "lava", "honey"]
-gas=["air","fire","smoke", "dust", "poisonous gas"]
-shapes=["sphere", "square", "blob", "ring", "collumn", "cage", "wall", "dome"]
-vesels=["lungs", "pots","waterskins", "glasses", "cracks", "scabbards", "cups"]
-radiation=["moonlight", "sunlight", "fire-light", "light", "darkness", "lightning","unnatural gravitation"]
+       "paper", "mud", "cloth", "lava", "hair","honey","stone", "ivory", "corrosive fumes", "leaves", "cheese", "wax", "crystal", "lace", "plasma",
+       "tea", "porridge", "sandstone", "gem stone", "mist", "mercury", "titanium", "aluminium", "platinum", "mould", "diamond", "alcohol", "chitin", "feathers"]
+liquid=["fresh water", "seawater", "blood", "gelatinous ooze", "bile", "sand", "corrosive acid", "mud", "lava", "honey", "leaves", "tea", "porridge", "mercury", "feathers"]
+gas=["air","fire","smoke", "dust", "poisonous gas", "corrosive fumes", "plasma", "mist"]
+shapes=["sphere", "square", "blob", "ring", "collumn", "cage", "wall", "dome", "shard", "pyramid"]
+vesels=["lungs", "pots","waterskins", "glasses", "cracks", "scabbards", "cups", "teapots", "flasks", "barrels", "bowls", "chests", "cupboards", "quivers", "helmets", "armour"]
+radiation=["moonlight", "sunlight", "torchlight", "light", "darkness", "lightning","unnatural gravitation", "starlight", "wind"]
 feelings=["rage", "lust", "calm", "confusion", "fear", "courage", "love", "regret", "amnesia"]
 minds=["sentient", "non-sentient", ""]
 magnitude=["puny", "slight", "minor", "average", "significant", "strong", "powerful", "extreme", "unbelieveable"]
 bodies=["bird", "humanoid", "serpent", "gorilla", "horse", "centaur", "dragon", "ant", "butterfly", "beetle", "bear", "wolf","boar","squid","angel","turtle","cat","fish","shark","lizard","tortoise","pachyderm of the caster's preference", "being inconceivable to the human mind"]
-transrules=["They turn back when the creatures body dies.", "They turn back after "+str(randomag()+5)+" minutes.", "They never turn back.",
-            "They can turn back at will."]
-threats=["kinetic impacts", "high temperatures", "low temperatures", "poison", "acid", "starvation", "thirst", "disease", "intentional attacks", "bad luck", "anything"]
-types=["allies", "enemies", "humans", "humanoids", "animals", "summoned beings", "humans and anmials","undead beings","animated objects"]
-directions=["in all directions", "away from the caster(or object)", "towards the caster (or object)", "upwards", "downwards"]
+directions=["in all directions", "upwards", "downwards","North","East","South","West","in a chosen direction"]
 boosts=["strength", "speed", "stamina", "inteligence", "perceptiveness","coordination"]
 props=[["melting point","degrees"],["boiling point","degrees"],["strength","percent"],["weight","percent"],["reflectivity","percent"]]
 bodypts=["a pair of arms","a pair of legs","a pair of wings","a bunch of tentacles","a pair of horns","a pair of mandibles","a scorpion tail","a tail","a pair of insectile wings",
          "antlers", "claws","spines","a pair of mantis weapons","a pair of pincers","a bunch of armoured plates","a mane","a turtle-like shell"]
 objects=["A chosen object", "The biggest object", "The most valuable object", "The object the caster is looking at"]
 timescales=["decades", "years","months","weeks", "days", "hours", "minutes", "seconds"]
-colours=["white","black","grey","red","blue","yellow","green","purple","orange","magenta","pink","cyan","turquise","gold-coloured","silver-coloured","transarent","invisible"]
+sounds=["a deafening boom","an ear splitting scream","the sound of thunder","a mighty roar","a painful screeching sound","an eerie tune","melodic music","a loud pop","a thousand singing choral voices","a pervasive silence","an unearthly sound","a brief whooshing sound","the sound of keys scraping on piano wire"]
+colours=["white","black","grey","red","blue","yellow","green","purple","orange","magenta","pink","cyan","turquise","gold-coloured","silver-coloured","transparent","invisible"]
 triggers=["destroyed", "brandished", "exposed to "+random.choice(radiation), "touched by "+random.choice(stuff),"looked at",
           "intentionally used by anyone holding it", "intentionally used by its crerator holding it", "touched by a "+random.choice(colours)+" object"]
-things=["sword","spear","axe","dagger","arrow","bow","cup","orb","teapot","flower","rake","spade","wig","hat","belt",
-        "ring","crown","shoe","glove","fruit","fork","vegetable","table","helmet","book","carpet","key","pot","scabbard",
-        "waterskin","bowl","torch","lamp","rope","boulder","pitchfork","cloak","bird", "human","serpent","gorilla","horse","centaur",
-        "dragon","ant","butterfly","beetle","bear", "wolf","boar","squid","angel","turtle","cat","fish","shark","lizard","tortoise",
-        "pachyderm of the caster's preference"]
-livingthings=["bird", "human","serpent","gorilla","horse","centaur","dragon","ant","butterfly","beetle","bear", "wolf","boar","squid"
-              ,"angel","turtle","cat","fish","shark","lizard","tortoise","pachyderm of the caster's preference"]
-plants=["grass","daisies","oak trees","pine trees","willow trees","palm trees","roses","elm trees","nettles","bushes","vines","sunflowers","cactai","thistles","mushrooms","liles"]
+things=["sword","spear","axe","dagger","arrow","bow","cross-bow","firearm","mace","lance","weapon","hilt","cup","orb","teapot","flask","flower","rake","spade","knife","wig","hat","belt",
+        "ring","crown","shoe","glove","fruit","fork","vegetable","table","helmet","book","carpet","key","pot","scabbard","quiver",
+        "waterskin","bowl","torch","lamp","candle","rope","boulder","pitchfork","cloak","belt","bird","human","serpent","ape","horse","centaur",
+        "dragon","ant","butterfly","beetle","bear", "wolf", "dog","boar","squid","angel","turtle","cat","fish","shark","lizard","tortoise",
+        "bat", "insect","frog","pachyderm"]
+livingthings=["bird", "human","serpent","ape","horse","centaur","dragon","ant","butterfly","beetle","bear","wolf","dog","boar","squid"
+              ,"angel","turtle","cat","fish","shark","lizard","tortoise","pachyderm","bat","insect","frog"]
+plants=["blades of grass","daisies","oak trees","pine trees","willow trees","palm trees","roses","elm trees","nettles","bushes","vines","sunflowers","cactai","thistles","mushrooms","liles"]
+threats=["kinetic impacts", "high temperatures", "low temperatures", "poison", "acid", "starvation", "thirst", "disease", "intentional attacks","accidents", "bad luck", "anything", random.choice(things)+"s", random.choice(stuff)]
 ailments=[random.choice(colours)+" boils", random.choice(colours)+" rashes", "vomiting", "diarrhea","victims' teeth to fall out","headaches","disoreintation","exhaustion",
           "hair loss", "infertility", "pregnancy","coughing"]
+types=["allies", "enemies", "humans", "humanoids", "animals", "summoned beings", "humans and anmials","undead beings","animated objects",random.choice(livingthings)+"s"]
 spells=["create","transfigure","fill","emotion","summon","transform","protect", "radiate","necro","hyperspell",
         "negate","blind","heroup","detonate","item","delay","portal","temp","properties","sprout","mechro","banish",
         "forced","transfigure2","blast","transfigure3","weather","ethereal","mindmatter","recolour","disease","flash",
-        "controled","manipulate","age","garden"]
+        "controled","manipulate","age","garden","unknown"]
 
 metaspells=["hyperspell","item", "delay","forced"]
 
@@ -205,6 +213,7 @@ catagory=[stuff, radiation, minds, types, bodypts, vesels]
 def summon(power, scource):
     split=splitpower(power, 3)
     quantity, length, lifetime=round(split[0],0),split[1],split[2]
+    
     madeof=random.choice(stuff)
     bodyshape=random.choice(bodies)
     if quantity<=1:
@@ -252,7 +261,7 @@ def transform(power, source):
     bodyshape=random.choice(bodies)
     targets, plr=target(source,0)
     
-    lifetime=duration(plr, lifetime)
+    lifetime=random.choice("This effect lasts "+[duration(plr, lifetime), Itthey(plr)+" may turn back at will"])
   
     a=random.random()
     addlimbs=[]
@@ -276,7 +285,7 @@ def transform(power, source):
         
     return "Transforms "+targets+" into "+s("creature",plr)+","+itthey(plr)+" "+isare(plr)+" in the shape of a "+bodyshape+" and "+isare(plr)+" made of "+madeof+""".
 """+Itthey(plr)+" "+isare(plr)+" "+str(length)+" meters long"+addon+""".
-The effects lasts """+str(lifetime)+"."
+"""+str(lifetime)+"."
 
 def create(power, source):
     material=random.choice(stuff)
@@ -339,7 +348,7 @@ def detonate(power,source):
         detonation="an implosion"
         madness=""
     else:
-        madness=random.choice(["gravity to reverse", "space to fold in on itself", "a wormhole to another dimension to open", "time to freeze", "space to be removed from reality and enclosed in its own pocket dimension"])
+        madness=random.choice(["gravity to reverse", "space to fold in on itself", "a wormhole to another dimension to open", "time to freeze", "space to be removed from reality and enclosed in its own pocket dimension","all objects to be mirror imaged through their vertical axis"])
         detonation="a disruption in the laws of physics causing "+madness+" for "+str(randomag()+5)+" "+random.choice(timescales)+" in an area"
     return "There is "+detonation+" of radius "+str(m1+1)+" metres centred at a chosen point within "+str(m2+1)+" metres of the "+source+"."
 
@@ -347,13 +356,25 @@ def portal(power,source):
     split=splitpower(power,3)
     m1,m2,m3=split[0],split[1],split[2]
     a=random.random()
-    if a>0.5:
+    if a>0.7:
         return "A portal of radius "+str(m1+0.2)+" metres appears conecting two points seperated by a distance of up to "+str(2*m2+1)+""" metres.
 Both ends of the portal must lie within """+str(m3+(2*m2+1))+" metres of the "+source
-    else:
-        targets=["The caster is", "All "+random.choice(types)+", within "+str(m2)+" metres, are", random.choice(objects)+" within "+str(m2)+"metres is"]
+    elif a>0.4:
+        targets=["The caster is", "All "+random.choice(types)+", within "+str(m2)+" metres, are", random.choice(objects)+" within "+str(m2)+" metres is"]
         target=random.choice(targets)
         return target+" teleported instantly to a chosen area within "+str(m1+m3)+" metres of the "+source
+    elif a>0.2:
+        targets=["The "+source+" is", "All "+random.choice(types)+", within "+str(m2)+" metres, are", random.choice(objects)+" within "+str(m2)+" metres is"]
+        target=random.choice(targets)
+        if target==targets[1]:plr=1
+        else:plr=0
+        return target+" accelerated instantly to "+str(3*m1)+" meters per second towards a chosen point. On reaching that point "+itthey(plr)+" "+s("stop",plr)+" imediatly."
+    else:
+        targets=["The caster is", "All "+random.choice(types)+", within "+str(m2)+" metres, are", random.choice(objects)+" within "+str(m2)+" metres is"]
+        target=random.choice(targets)
+        if target==targets[1]:plr=1
+        else:plr=0
+        return target+" moved to an empty universe, containing nothing but "+random.choice(colours)+" void above, and an infite "+random.choice(colours)+" plane floor. Each meter "+itthey(plr)+" "+invs("move",plr)+" through this realm corresponds to "+str(m1)+" meters in the real world, while each minute "+itthey(plr)+" "+invs("spend",plr)+" in this world relates to "+str(m3)+" minutes in the real world. "+Itthey(plr)+" "+invs("return",plr)+" to the real world after "+str(randomag())+" minutes of time in the other realm."
 
 def radiate(power,source):
     split=splitpower(power,2)
@@ -387,11 +408,11 @@ def necro(power,source):
 
     a=random.random()
     if a>0.75:
-        loyalty=" toatally obedient to their creator"
+        loyalty=" toatally obedient to "+itstheir(plr)+" creator"
     else:
         loyalty=loyalties(plr)
     
-    deadtype=random.choice(["mindless zombies", "ethereal ghosts which are banished on contact with "+random.choice(radiation)])
+    deadtype=random.choice(["zombies", "ethereal ghosts which are banished on contact with "+random.choice(radiation)])
 
     return targets+" "+isare(plr)+" reanimated as "+deadtype+", "+itthey(plr)+" "+isare(plr)+loyalty+" , they remain animated "+str(lifetime)+"."
 
@@ -426,13 +447,13 @@ def mechro(power,source):
         
     a=random.random()
     if a>0.75:
-        loyalty=" toatally obedient to their creator"
+        loyalty=" toatally obedient to "+itstheir(plr)+" creator"
     else:
         loyalty=loyalties(plr)
 
     lifetime=duration(plr, m2)
 
-    return targets+" "+isare(plr)+" animated, "+levitate+". "+Itthey(plr)+" "+isare(plr)+loyalty+" , "+itthey(plr)+" "+invs("remain",plr)+" animated "+str(lifetime)+"."
+    return targets+" "+isare(plr)+" animated"+levitate+". "+Itthey(plr)+" "+isare(plr)+loyalty+" , "+itthey(plr)+" "+invs("remain",plr)+" animated "+str(lifetime)+"."
 
 def banish(power,source):
     typ=[random.choice(["undead being", "animated object", "summoned creature"])]
@@ -566,9 +587,9 @@ def transfigure2(power, source):
 
 def blast(power, source):
     split=splitpower(power,3)
-    m1,m2,m3=split[0],split[1],split[2]
-    m1=round(math.log(m1+1),0)
-    if m1<1:
+    m1,m2,m3=round(split[0],0),split[1],split[2]
+
+    if m1<=1:
         plr=0
     else:
         plr=1
@@ -576,11 +597,11 @@ def blast(power, source):
     a=random.random()
     if a>0.5:
         material=random.choice(stuff)
-        made="made of "+material+". "+stuffsolid(stuff)
+        made,extra="made of "+material,stuffsolid(stuff)
     else:
-        made=""
+        made,extra="",""
 
-    return "Fires "+str(m1)+" "+s(random.choice(things),plr)+" "+made+" at "+str(3*m2)+" metres per second, away from the "+source+"."+Itthey(plr)+" "+invs("fade",plr)+" away after "+str(m3)+" minutes."
+    return "Fires "+str(m1)+" "+s(random.choice(things),plr)+" "+made+" at "+str(3*m2)+" metres per second, away from the "+source+". "+extra+Itthey(plr)+" "+invs("fade",plr)+" away after "+str(m3)+" minutes."
     
 def transfigure3(power, source):
     thing1=listconstruct(things,0.9)
@@ -598,7 +619,7 @@ def transfigure3(power, source):
 
     a=random.random()
     if a>0.5:
-        return "All "+thing1+"s whithin "+str(power+1)+"meters of the "+source+" are turned into "+thing2+"s"+made+"."
+        return "All "+thing1+"s whithin "+str(power+1)+" meters of the "+source+" are turned into "+thing2+"s"+made+"."
     else:
         a=random.random()
         if a>0.75:
@@ -678,7 +699,7 @@ def disease(power,source):
     else:extra=""
     
     contag=random.choice(["contagous by touch", "contagous through the air", "contagous through eye contact", "not contagous at all", "contagous via intercourse",
-                         "contagous by verbal comunication","contagous through written comunication", "contagous by contact with infected blood"])
+                         "contagous by verbal comunication","contagous through written comunication", "contagous by contact with infected blood","instantly contracted by infected individual's descendants","instantly contracted by infected individuals ancestors and siblings","it is contagous by thought (thinking about individuals who have it will result in catching it)"])
 
     cure=random.choice(["a good nights sleep", "a few days rest", "strenuous exercise","hot tea", "medicinal herbs", "bloodletting with leeches", "true loves first kiss",
                         "infecting somone else with it", "praying", "nothing", "waiting a few hours", "contact with "+random.choice(radiation), "consuming some "+random.choice(stuff),])
@@ -720,7 +741,7 @@ def age(power, source):
 
 def garden(power, source):
     plant=random.choice(plants)
-    adject=random.choice(["carnivorous","stinging ","posionous", "dead", random.choice(colours), "","bonsai","pleasant smelling","fruit bearing","fully mobile and sentient"])
+    adject=random.choice(["carnivorous","stinging ","posionous", "dead", random.choice(colours), "","bonsai","pleasant smelling","fruit bearing","magnetic","fully mobile and sentient"])
     if adject=="fully mobile and sentient":
         addon="They are"+loyalties(1)
     else:
@@ -728,22 +749,23 @@ def garden(power, source):
     appear=random.choice(["burst from the ground","pop into existance", "grow rapidly out of the ground", "appear through portals that snap shut behind them"])
 
     a=random.random()
-    if a>0.75:
+    if a>0.8:
         when=""
-    elif a>0.5:
+    elif a>0.6:
         when="When the "+plant+" are burned "+random.choice(["their combustion emits cold, not heat","the flames are "+random.choice(colours),"the smoke is "+random.choice(colours),"they scream","they sing"])+"."
-    elif a>0.25:
-        effect=random.choice(["they cause halucinations","they are medicinal","they are negativly nourishing (meaning that their consumption acceletates starvation)","manipulate"])
+    elif a>0.4:
+        effect=random.choice(["they cause halucinations","they are medicinal","they are negativly nourishing (meaning that their consumption acceletates starvation)","they are highly addictive","they have a calming effect","manipulate"])
         if effect=="manipulate":
             exec("""effect=manipulate(power, "the consumer")""")
             effect=effect.lower()
         when="When the "+plant+" are consumed "+effect+"."
+    elif a>0.2:
+        when="When dew gathers on the "+plant+" the dew "+random.choice(["glows "+random.choice(colours),"is medicinal","is negativly thirst quenching (meaning that drinking it accelerates death from thrist)","is acidic","is poisonous","is made of "+random.choice(liquid),"is highly flamable","is hundreds of kilos per drop in weight"])
     else:
         effect=random.choice(["they turn "+random.choice(colours),"they explode","they implode","they glow "+random.choice(colours),"they transform into "+random.choice(things)+"s"])
         when="When the "+plant+" are exposed to "+random.choice(radiation)+" "+effect+"."
 
-    
-    return "Within a "+str(power)+" radius of the "+source+" "+adject+" "+plant+" "+appear+". "+when
+    return "Within a "+str(power)+" meter radius of the "+source+" "+adject+" "+plant+" "+appear+". "+when
 
 def delay(power,source):
     m3=randomag()
@@ -809,7 +831,7 @@ def flash(power,source):
 
     a=random.random()
     if a>0.5:
-        ans=ans+" and a noise of "+random.choice(magnitude)+" volume."
+        ans=ans+" and "+random.choice(sounds)+"."
     else:
         ans=ans+"."
 
@@ -829,10 +851,21 @@ def controled(power, source):
     while spell=="controled":
         spell=random.choice(spells)
     exec("ans="+spell+"(power, source)")
-    if source=="item":source="user of the item"
+    if source=="object":source="user of the object"
     return "The "+source+""" has a high degree of control over the following miracle, as it occurs they may reduce any of it's magnitudes by as much as they desire.
 """+ans
 
+def unknown(power,source):
+    spell=random.choice(spells)
+    while spell=="unkown":
+        spell=random.choice(spells)
+    exec("ans="+spell+"(power, source)")
+    Do=interp(raw_input("The effects of this miracle are impossible to predict, would you like to set it of anyway?(y/n):"))
+    if Do==1:
+        return ans
+    else:
+        return ""
+    
 def miracle():
     power=randomag()
     spell=random.choice(spells)
