@@ -171,7 +171,7 @@ stuff=["fire", "ice", "wood", "granite", "obsidian", "fresh water", "seawater", 
 liquid=["fresh water", "seawater", "blood", "gelatinous ooze", "bile", "sand", "corrosive acid", "mud", "lava", "honey", "leaves", "tea", "porridge", "mercury", "feathers"]
 gas=["air","fire","smoke", "dust", "poisonous gas", "corrosive fumes", "plasma", "mist"]
 shapes=["sphere", "square", "blob", "ring", "collumn", "cage", "wall", "dome", "shard", "pyramid"]
-vesels=["lungs", "pots","waterskins", "glasses", "cracks", "scabbards", "cups", "teapots", "flasks", "barrels", "bowls", "chests", "cupboards", "quivers", "helmets", "armour"]
+vesels=["lungs", "pots","waterskins", "glasses", "cracks", "scabbards", "cups", "teapots", "flasks", "barrels", "bowls", "chests", "cupboards", "quivers", "helmets", "suits of armour"]
 radiation=["moonlight", "sunlight", "torchlight", "light", "darkness", "lightning","unnatural gravitation", "starlight", "wind"]
 feelings=["rage", "lust", "calm", "confusion", "fear", "courage", "love", "regret", "amnesia"]
 minds=["sentient", "non-sentient", ""]
@@ -201,9 +201,9 @@ ailments=[random.choice(colours)+" boils", random.choice(colours)+" rashes", "vo
           "hair loss", "infertility", "pregnancy","coughing"]
 types=["allies", "enemies", "humans", "humanoids", "animals", "summoned beings", "humans and anmials","undead beings","animated objects",random.choice(livingthings)+"s"]
 spells=["create","transfigure","fill","emotion","summon","transform","protect", "radiate","necro","hyperspell",
-        "negate","blind","heroup","detonate","item","delay","portal","temp","properties","sprout","mechro","banish",
+        "negate","heroup","detonate","item","delay","portal","temp","properties","sprout","mechro",
         "forced","transfigure2","blast","transfigure3","weather","ethereal","mindmatter","recolour","disease","flash",
-        "controled","manipulate","age","garden","unknown"]
+        "controled","manipulate","age","garden","unknown","link","uncertain"]
 
 metaspells=["hyperspell","item", "delay","forced"]
 
@@ -228,24 +228,16 @@ def summon(power, scource):
         summon=random.choice(["through portals that snap shut behind them","via instantaneous appearance", "by disolving into existance"])
 
     lifetime=duration(plr, lifetime)
-    
-    a=random.random()
-    addlimbs=[]
-    while a>0.5:
-        newlimb=random.choice(bodypts)
-        while newlimb in addlimbs:
-            newlimb=random.choice(bodypts)
-        addlimbs.append(newlimb)
-        a=random.random()
+
+
+    addlimbs=listconstruct(bodypts, 0.6)
         
     a=random.random()
     if a>0.5 and len(addlimbs)!=0:
         newstuff=random.choice(stuff)
-        limbs=listgram(addlimbs)
-        addon=" and "+itthey(plr)+" "+havehas(plr)+" "+limbs+", made of "+newstuff
+        addon=" and "+itthey(plr)+" "+havehas(plr)+" "+addlimbs+", made of "+newstuff
     elif len(addlimbs)!=0:
-        limbs=listgram(addlimbs)
-        addon=" and "+itthey(plr)+" "+havehas(plr)+" "+limbs
+        addon=" and "+itthey(plr)+" "+havehas(plr)+" "+addlimbs
     else:
         addon=""
     
@@ -261,7 +253,7 @@ def transform(power, source):
     bodyshape=random.choice(bodies)
     targets, plr=target(source,0)
     
-    lifetime=random.choice("This effect lasts "+[duration(plr, lifetime), Itthey(plr)+" may turn back at will"])
+    lifetime=random.choice(["This effect lasts "+duration(plr, lifetime), Itthey(plr)+" may turn back at will"])
   
     a=random.random()
     addlimbs=[]
@@ -368,7 +360,7 @@ Both ends of the portal must lie within """+str(m3+(2*m2+1))+" metres of the "+s
         target=random.choice(targets)
         if target==targets[1]:plr=1
         else:plr=0
-        return target+" accelerated instantly to "+str(3*m1)+" meters per second towards a chosen point. On reaching that point "+itthey(plr)+" "+s("stop",plr)+" imediatly."
+        return target+" accelerated instantly to "+str(3*m1)+" meters per second towards a chosen point. On reaching that point "+itthey(plr)+" "+invs("stop",plr)+" imediatly."
     else:
         targets=["The caster is", "All "+random.choice(types)+", within "+str(m2)+" metres, are", random.choice(objects)+" within "+str(m2)+" metres is"]
         target=random.choice(targets)
@@ -455,59 +447,61 @@ def mechro(power,source):
 
     return targets+" "+isare(plr)+" animated"+levitate+". "+Itthey(plr)+" "+isare(plr)+loyalty+" , "+itthey(plr)+" "+invs("remain",plr)+" animated "+str(lifetime)+"."
 
-def banish(power,source):
-    typ=[random.choice(["undead being", "animated object", "summoned creature"])]
-    a=random.random()
-    while a>0.5:
-        a=random.random()
-        new=random.choice(["undead being", "animated object", "summoned creature",])
-        if new not in typ:
-            typ.append(new)
-        else:
-            a=0
-            
-    a=random.random()
-    if a>0.6:
-        for i in typ:
-            i=i+"s"
-        typ=listgram(typ)
-        targets="all "+typ+"s within "+str(power)+" metres of the "+source
-    else:
-        typ=listgram(typ)
-        typ=typ.replace("and","or")
-        targets="a chosen "+typ+" within "+str(power)+" metres of the "+source
-
-    return "Effected "+typ+"s are deanimated, they drop lifeless. This effects "+targets
-
 def negate(power,source):
-    split=splitpower(power,2)
-    m1,m2=split[0],split[1]
     a=random.random()
-    if a>0.6:
-        targets="all miracles the effects of which lie entirely within "+str(m2+m1)+" metres "
-    else:
-        targets="a chosen miracle the effect of which reaches within "+str(m1)+" metres "
+    if a>0.7:
+        typ=[random.choice(["undead being", "animated object", "summoned creature"])]
+        a=random.random()
+        while a>0.5:
+            a=random.random()
+            new=random.choice(["undead being", "animated object", "summoned creature",])
+            if new not in typ:
+                typ.append(new)
+            else:
+                a=0
+            
+        a=random.random()
+        if a>0.6:
+            for i in typ:
+                i=i+"s"
+            typ=listgram(typ)
+            targets="all "+typ+"s within "+str(power)+" metres of the "+source
+        else:
+            typ=listgram(typ)
+            typ=typ.replace("and","or")
+            targets="a chosen "+typ+" within "+str(power)+" metres of the "+source
 
-    return """Target miracles are negated, their effects instantly cease, anything created by them vanishes and anything transfigured by them reverts to its origional material.
+        return "Effected "+typ+"s are deanimated, they drop lifeless. This effects "+targets
+
+    elif a>0.3:
+        split=splitpower(power,2)
+        m1,m2=split[0],split[1]
+        a=random.random()
+        if a>0.6:
+            targets="all miracles the effects of which lie entirely within "+str(m2+m1)+" metres "
+        else:
+            targets="a chosen miracle the effect of which reaches within "+str(m1)+" metres "
+
+        return """Target miracles are negated, their effects instantly cease, anything created by them vanishes and anything transfigured by them reverts to its origional material.
 This effects """+targets
 
-def blind(power,source):
-    split=splitpower(power,2)
-    m1,m2=split[0],split[1]
-    a=random.random()
-    if a>0.75:
-        if source=="item":targets="if the targets name is written on the items surface in the next few minutes"
-        else:targets="if the "+source+" knows the name of the person they wish to target"
-    elif a>0.5:
-        targets="if the target lies within "+str(m1+1)+" metres of the "+source+"."
-    elif a>0.25:
-        if source=="item":targets="if the target is pointed at by the item."
-        else:targets="if the target can be seen by the "+source+"."
     else:
-        if source=="item":targets="if the effects of a miracles caused by the target touch the item."
-        else:targets="if the effects of a miracle caused by the target can be seen by the "+source+"."
+        split=splitpower(power,2)
+        m1,m2=split[0],split[1]
+        a=random.random()
+        if a>0.75:
+            if source=="item":targets="if the targets name is written on the items surface in the next few minutes"
+            else:targets="if the "+source+" knows the name of the person they wish to target"
+        elif a>0.5:
+            targets="if the target lies within "+str(m1+1)+" metres of the "+source+"."
+        elif a>0.25:
+            if source=="item":targets="if the target is pointed at by the item."
+            else:targets="if the target can be seen by the "+source+"."
+        else:
+            if source=="item":targets="if the effects of a miracles caused by the target touch the item."
+            else:targets="if the effects of a miracle caused by the target can be seen by the "+source+"."
 
-    return "A target individual looses the ability to see and trigger miracles for "+str(m2+5)+""" minutes.
+        return "A target individual looses the ability to see and trigger miracles for "+str(m2+5)+""" minutes.
 This only works """+targets
 
 def heroup(power,source):
@@ -529,7 +523,7 @@ def temp(power, source):
     m1,m2, m3=split[0],split[1],split[2]
     shape=random.choice(shapes)
     direction=random.choice(["increases by","decreases by","becomes"])
-    return "In a "+shape+" shaped region of width "+str(m1+1)+" metres, the tempertature "+direction+" "+str(m2)+" degrees (celcius). This is centred at a point in "+str(m3)+" metres of the "+source
+    return "In a "+shape+" shaped region of width "+str(m1+1)+" metres, the tempertature "+direction+" "+str(10*m2)+" degrees (celcius). This is centred at a point in "+str(m3)+" metres of the "+source
 
 def properties(power, source):
     split=splitpower(power,3)
@@ -539,7 +533,7 @@ def properties(power, source):
     thing=random.choice(props)
     direction=random.choice(["increased", "decreased"])
     shape=random.choice(shapes)
-    return "All "+from1+" in a "+shape+" shaped region of width "+str(m1+0.5)+" metres has its "+thing[0]+" "+direction+" by "+str(m2+0.5)+" "+thing[1]+". This is centred at a point in "+str(m3)+" metres of the "+source+"."
+    return "All "+from1+" in a "+shape+" shaped region of width "+str(m1+0.5)+" metres has its "+thing[0]+" "+direction+" by "+str(10*m2)+" "+thing[1]+". This is centred at a point in "+str(m3)+" metres of the "+source+"."
 
 def sprout(power, source):
     part=random.choice(bodypts)
@@ -735,7 +729,7 @@ def age(power, source):
 
     a=random.random()
     if a>0.8:
-        return targets+" will from now on "+random.choice(["age at twice the rate","age at twice the rate","not age at all","grow younger at a rate of 1 year per year"])+"."
+        return targets+" will from now on "+random.choice(["age at twice the rate","age at half the rate","not age at all","grow younger at a rate of 1 year per year","have an age that varies in proportion to their latitude"])+"."
     else:
         return targets+" "+havehas(plr)+" "+itstheir(plr)+" phyical age "+direction+" by "+str(power)+" years."
 
@@ -767,6 +761,25 @@ def garden(power, source):
 
     return "Within a "+str(power)+" meter radius of the "+source+" "+adject+" "+plant+" "+appear+". "+when
 
+def link(power,source):
+    split=splitpower(power,2)
+    m1,m2=split[0],split[1]
+    if source=="object":
+        thing="user of the object"
+    else:
+        thing=source
+    targettypes=["animal","human","ally","enemy","sentient being"]
+    targetables=["the "+thing,"the "+thing+"'s first love","the "+thing+"'s greatest living enemy","the "+thing+"'s oldest parent (or creator)"]
+    for i in targettypes:
+        targetables=targetables+["a target "+i+" within "+str(m1)+" meters of the "+source,"the "+i+" nearest to the "+source]
+    random.shuffle(targetables)
+    t1,t2=targetables[0],targetables[1]
+
+    effect=random.choice(["swap bodies (each of them finds themselves piloting the others body)","become mindlinked (they are able to comunicate mind to mind, and make use of one anothers senses)","become lifelinked (the death of either of them will result in the death of both)","are fused together mind body and soul","are each teleported to the others position (swap places)"])
+    t1=t1[0].capitalize()+t1[1:]
+
+    return t1+" and "+t2+" "+effect+". This lasts "+duration(1,m2).replace("they",random.choice(["either of them","both of them simultaneously"]))+"."
+    
 def delay(power,source):
     m3=randomag()
     spell=random.choice(spells)
@@ -810,16 +823,9 @@ def hyperspell(power,source):
         n=n+1
     n=0
     at=0
-    for g in ["metres", "degrees", "percent"]:
-        while n==0:
-            pt=ans.find(g,at)
-            at=pt+6
-            if pt==-1:
-                n=1
-            else:
-                pt=pt-3
-                ans=ans[:pt]+"0"+ans[pt:]
-                ans=ans.replace(" 00"," 10")
+    for i in range(1,9):
+        pt=ans.replace(str(i)+".",str(i)+"0.")
+        pt=ans.replace(str(i)+" ",str(i)+"0")
         
     return """This miracle is extremely powerful, it can only be negated by another extremely powerful miracle.
     """+ans
@@ -827,7 +833,7 @@ def hyperspell(power,source):
 def flash(power,source):
     spell=random.choice(spells)
     exec("ans="+spell+"(power, source)")
-    ans=ans+"\nThis miracles activation is occompanied by a "+random.choice(magnitude)+" flash of "+random.choice(colours)+" light"
+    ans=ans+"\nThis miracles activation is occompanied by a "+random.choice(magnitude)+random.choice([" flash of "+random.choice(colours)+" light"," blast of wind"," swirling "+random.choice(colours)+" aura."," discharge of "+random.choice(colours)+" sparks."])
 
     a=random.random()
     if a>0.5:
@@ -857,7 +863,7 @@ def controled(power, source):
 
 def unknown(power,source):
     spell=random.choice(spells)
-    while spell=="unkown":
+    while spell=="unkown" or spell=="uncertain" or spell=="unknown":
         spell=random.choice(spells)
     exec("ans="+spell+"(power, source)")
     Do=interp(raw_input("The effects of this miracle are impossible to predict, would you like to set it of anyway?(y/n):"))
@@ -865,18 +871,44 @@ def unknown(power,source):
         return ans
     else:
         return ""
-    
+
+def uncertain(power,source):
+    spell=random.choice(spells)
+    while spell=="unkown" or spell=="uncertain" or spell=="forced":
+        spell=random.choice(spells)
+    exec("ans="+spell+"(power, source)")
+
+    ansdisplay=ans
+
+    for i in things+stuff+types+radiation+feelings+vesels+bodypts+colours+threats+ailments:
+        ansdisplay=ansdisplay.replace(" "+i+" "," * ")
+
+    for i in range(0,9):
+        for g in [".",""]:
+            ansdisplay=ansdisplay.replace(str(i)+g,"*")
+
+    while "**" in ansdisplay:
+        ansdisplay=ansdisplay.replace("**","*")
+
+    print "This miracles overal nature can be determined, but some details are hidden. The *'s show uncertainties:\n"+ansdisplay+"\n"
+    Do=interp(raw_input("Would you like to set off this miracle?(y/n):"))
+    if Do==1:
+        return ans
+    else:
+        return ""
+
 def miracle():
     power=randomag()
     spell=random.choice(spells)
     source="caster"
     exec("ans="+spell+"(power, source)")
-    if spell=="hyperspell":add="\nThis miracles power defies numerisation."
-    else: add="\nThis miracle has an overall power of "+str(power)+"."
+    if "all" or "All" in ans:
+        power=power*3
+    add="\nThis miracle has an overall power of "+str(power)+"."
     return ans+add
 
 
-for i in range(0,15):
+for i in range(0,5):
     printnice(miracle())
     print "\n"
 
