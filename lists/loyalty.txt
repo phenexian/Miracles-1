@@ -1,7 +1,0 @@
-are loyal to their summoner
-are aggressive towards their summoner
-are docile
-act naturally
-are fixated on a single task, chosen by their summoner
-are loyal to their summoner for {duration} and are then aggressive towards them
-are willing to grant their summoner {number} wishes

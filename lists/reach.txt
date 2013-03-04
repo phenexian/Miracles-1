@@ -1,6 +1,0 @@
-within {distance} of the {source}
-within sight of the {source}
-in contact with the {source}
-within {distance} of the {source} and within sight of the {source}
-within {distance} of the {source} and out of sight of the {source}
-between {distance1} and {distance2} of the {source}
