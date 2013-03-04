@@ -1,0 +1,8 @@
+explode
+implode
+disapear
+become twice as large
+become ten times as large
+shrink to half their size
+shrink to a tenth of their size
+become ethereal and ghostly for {duration}

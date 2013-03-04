@@ -1,0 +1,59 @@
+Turns all {stuff1} {reach} into {stuff2}.
+Recolours everything {colour1} {reach} {colour2}.
+Turns all {radiation1} {reach} into {radiation2}.
+Causes {magnitude} {feeling} in {target}.
+Everyting {lorcolour} {reach} {effect}.
+Causes {target} to have the ability to control {landstuff} {method} {duration}.
+Enchants {aim_item} to have the property such that when {trigger} it has the following effect:<<{sentences}>> {rarely_The item can in principle be manufactured in greater numbers if it is researched throughoghly by skilled workers. Making them out of {common materials\pricey materials\very rare materials} is {very difficult\easy\moderately complicated}.}
+Calls a {magnitude} swarm of {animal}s from the surrounding country, they {loyalty}.
+Summons a {size} creature made of {stuff} shaped like a {animal}. It has {landlimbs}. It {loyalty}.
+Summons {number} {size} creatures made of {stuff} shaped like {animal}s. They have {landlimbs}. They {loyalty}.
+Summons {number} {adjective} {size} creatures shaped like {animal}s. They {loyalty}.
+Conjures a deamon {reach}, the deamon is a {size} manifestation of {feeling}, it {loyalty}.
+Creates a {size} {shape} of {stuff} {reach}.
+The {source} has a high degree of control over the following miracle, any of its magnitudes can be reduced by any amount:<<{sentences}>>
+<<{sentences}>> The mircales activation is accompanied by a {magnitude} flash of {colour} light.
+A {magnitude} beam of {radiation} is fired from the {source}, anything succesfully hit by it {probably_{effect}}.
+All instances of {feeling1} in {target} are replaced with feelings of {feeling2} of approximately equal magnitude.
+Two points {reach} are connected directly together by {size} portals {duration}.
+Causes {target} to sprout {landlimbs} made of {stuff}, they last {duration}.
+Curses {target} {duration}. While cursed they {effect} when exposed to {radiation}.
+Turns {target} into {size} creatures made of {stuff} shaped like {animal}s. They have {landlimbs}.
+Turns all {thing1}s {reach} into {thing2}s.
+All {thing}s {reach} {effect}.
+Causes {target} who have {limbs1}, to have them mutate into {limbs2} {duration}.
+Causes {target} to have the ability to control {animal}s {method} {duration}.
+Raises {target} that are dead, as zombies {duration}. They {loyalty}.
+Raises {target} that are dead, as ghosts, they are banished on contact with {radiation}. They {loyalty}.
+Causes {target1} and {target2} to {twoparty}.
+Causes {target} to be completely immune to harm or pain as a result of {threat} {duration}.
+Causes {target} to be extremely vulnerable to {threat} {duration}.
+Compels {target} to {action}.
+Fills all {vesel}s {reach} with {stuff}.
+Fills {aim_{vesel}} with {stuff}.
+Places {aim_{animal}} under the direct control of the {source}, they may control it {method}.
+Makes {aim_{thing}} {effect}.
+Infects {target} with a disease, it's symptons include {landailments}. It is contagious via {contagious}. It is can be cured with {cure}.
+Aliviates {target} of {landailments} they may be suffering from {duration}.
+Heals {target} that are wounded {probably_the healing process is painful} {maybe_the healing process causes hunger}.
+The following miracle is extremely powerful, it can be negated, deactivated or resisted only by other extremely powerful miracles: <<{sentences}>>
+The following miracle if forced to happen, it must be cast:<<{sentences}>>
+The weather in the region about the {source} becomes {windy\misty\sunny\cloudy\rainy\overcast}{maybe_, it also becomes {much hotter\much colder\a bit hotter\a bit colder}}.{rarely_ The local climate is altered so that this weather state becomes the norm in this region.}
+In the region about the {source} it begins to {rain\snow\hail\rain {stuff}} {duration}.{maybe_ During this time their is also thunder and lightning.} This weather phenomenon {remains static\moves with the wind}.
+Turns {target} into ware-{animal}s. They transfrom only when exposed to {radiation}, and are otherwise unchanged. While transformed they are wild and aggressive.{maybe_ Anything bitten or scratched by one becomes one.}{rarely_ Death itself does not end the curse, if exposed a corpse will still transform and still be animate and aggresive. Killing them with {stuff} prevents them from ever rising again.}
+Animates all {animatable}s {reach} {duration}. They {loyalty}.
+Animates {aim_{animatable}} {duration}. It {loyalty}.
+Deactivates {a miracle\all miracles} the effects of which lie {at least partially\entirely} {reach}.
+The {next\next {number}} miracle(s) activated {reach} {which last {duration} {or less\or more}\which {don't involve\involve} {stuff}} are resisted, and don't happen.
+When the following miracle is cast any lasting effects left by previous miracles cast by the {source} are deactivated.<<{sentences}>>
+The {source} is transported to a point {reach} {via teleportation\as a beam of {radiation}\at high speed through the air}.
+Causes {target} to be transported to points {reach} of {their\the {sources}} choice {via teleportation\as a beam of {radiation}\at high speed through the air}.
+All sources of {radiation1} {reach} instead emit {radiation2} {duration}.
+Translates all {written\spoken} language {reach} into the {source}'s native language {duration}.
+A meteor made of {stuff} comes to Earth {reach} it's impact causes a {magnitude} explosion.
+Their is a {magnitude} {earthquake\tidal wave\volcanic erruption\tornado} in the region of the {source}.
+Binds a djin within {aim_{vesel}}. It can be released only by {it's vesel being rubbed\it's vesel being destoryed\it's vesel being opened up\it's true name being spoken aloud three times}, the djin's supernatural powers are {magnitude}, it will bargain for freedom. It is {good to it's word\a liar\truthful, but lawyery with promises}.
+At a point {reach} a supernatural {colour} fire begins. To this weird fire {landstuff} are fuel, it burns {mildly\quite\very} {hot\cold}.
+Grants an {aperature} {reach} the property that any {{radiation1} to pass through it becomes {radiation2}\{stuff1} to pass through it becomes {stuff2}}, it has this property {duration}.
+Creates a {size}, {colour}, {shape} shaped, feild of power {reach}. All {stuff1} to pass into the feild is turned into {stuff2}. The feild lasts {duration}.
+The laws of nature are mutated {reach} {duration}, such that {stuff1} and {stuff2} undergo {an explosive\an exothermic\an endothermic\a} chemical reaction when they come into contact, producing {stuff3} as a result of the reaction.

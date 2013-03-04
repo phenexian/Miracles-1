@@ -1,0 +1,17 @@
+white
+black
+grey
+red
+blue
+yellow
+green
+purple
+orange
+magenta
+pink
+cyan
+turquise
+gold-coloured
+silver-coloured
+transparent
+invisible

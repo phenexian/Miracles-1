@@ -1,0 +1,56 @@
+fire
+ice
+wood
+granite
+obsidian
+fresh water
+seawater
+blood
+meat
+air
+ash
+glass
+bone
+iron
+bronze
+steel
+silver
+gold
+sand
+flesh
+gelatinous ooze
+corrosive acid
+bile
+limestone
+dust
+smoke
+poisonous gas
+paper
+mud
+cloth
+lava
+hair
+honey
+stone
+ivory
+corrosive fumes
+leaves
+cheese
+wax
+crystal
+lace
+plasma
+tea
+porridge
+sandstone
+gemstone
+mist
+mercury
+titanium
+aluminium
+platinum
+mould
+diamond
+alcohol
+chitin
+feathers

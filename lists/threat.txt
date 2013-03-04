@@ -1,0 +1,14 @@
+kinetic impacts
+high temperatures
+low temperatures
+poison
+acid
+starvation
+thirst
+disease
+intentional attacks
+accidents
+bad luck
+anything
+{thing}s
+{stuff}

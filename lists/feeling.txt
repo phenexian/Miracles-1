@@ -1,0 +1,9 @@
+rage
+lust
+calm
+confusion
+fear
+courage
+love
+regret
+amnesia

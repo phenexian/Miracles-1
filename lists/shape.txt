@@ -1,0 +1,9 @@
+sphere
+square
+blob
+ring
+collumn
+wall
+dome
+shard
+pyramid

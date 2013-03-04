@@ -1,0 +1,6 @@
+door
+portal
+mouth
+keyhole
+window
+viser

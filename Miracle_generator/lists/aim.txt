@@ -1,0 +1,5 @@
+a chosen {x} within {distance} of the {source}
+the nearest {x} to the {source}
+the biggest {x} within {distance}
+the most valueable {x} within {distance}
+the {x} of greatest value to the {source}

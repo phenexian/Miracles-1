@@ -1,0 +1,10 @@
+carnivorous
+stinging
+posionous
+dead
+{colour}
+bonsai
+pleasant smelling
+fruit bearing
+magnetic
+sentient

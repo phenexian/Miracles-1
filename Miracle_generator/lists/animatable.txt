@@ -1,0 +1,7 @@
+shadow
+puppet
+painting
+statue
+doll
+tattoo
+reflection

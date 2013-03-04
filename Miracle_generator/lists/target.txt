@@ -1,0 +1,15 @@
+all allies within {distance} of the {source}
+all enemies within {distance} of the {source}
+everyone within {distance} of the {source}
+all summoned creatures within {distance} of the {source}
+all undead within {distance} of the {source}
+everyone within the {source}'s line of sight
+the {source} and his/her family
+everyone who can see the {source}
+everyone within {distance} of the {source} who can't see the {source}
+all animals within {distance} of the {source}
+all humans within {distance} of the {source}
+everything of the same gender as the {source} within {distance} of the {source}
+everything whose gender is the opposite of the {source}'s within {distance} of the {source}
+all miraclewokers within {distance} of the {source}
+the last {number} people within {distance} of the {source} to {action},
