@@ -1,0 +1,6 @@
+strength
+speed
+stamina
+inteligence
+perceptiveness
+coordination

@@ -5,15 +5,16 @@ Causes {magnitude} {feeling} in {target}.
 Everyting {lorcolour} {reach} {effect}.
 Causes {target} to have the ability to control {landstuff} {method} {duration}.
 Enchants {aim_item} to have the property such that when {trigger} it has the following effect:<<{sentences}>> {rarely_The item can in principle be manufactured in greater numbers if it is researched throughoghly by skilled workers. Making them out of {common materials\pricey materials\very rare materials} is {very difficult\easy\moderately complicated}.}
+An enchanted {thing} appears {reach}. It's enchantment is such that when {trigger} it has the following effect:<<{sentences}>>{possibly_ Once conjured the item lasts {duration}.}
 Calls a {magnitude} swarm of {animal}s from the surrounding country, they {loyalty}.
 Summons a {size} creature made of {stuff} shaped like a {animal}. It has {landlimbs}. It {loyalty}.
 Summons {number} {size} creatures made of {stuff} shaped like {animal}s. They have {landlimbs}. They {loyalty}.
-Summons {number} {adjective} {size} creatures shaped like {animal}s. They {loyalty}.
+Summons {size}, {adjective} {plant}s {reach}.
 Conjures a deamon {reach}, the deamon is a {size} manifestation of {feeling}, it {loyalty}.
 Creates a {size} {shape} of {stuff} {reach}.
 The {source} has a high degree of control over the following miracle, any of its magnitudes can be reduced by any amount:<<{sentences}>>
 <<{sentences}>> The mircales activation is accompanied by a {magnitude} flash of {colour} light.
-A {magnitude} beam of {radiation} is fired from the {source}, anything succesfully hit by it {probably_{effect}}.
+A {magnitude} beam of {radiation} is fired from the {source},{probably_ anything succesfully hit by it {effect}}.
 All instances of {feeling1} in {target} are replaced with feelings of {feeling2} of approximately equal magnitude.
 Two points {reach} are connected directly together by {size} portals {duration}.
 Causes {target} to sprout {landlimbs} made of {stuff}, they last {duration}.
@@ -35,19 +36,19 @@ Places {aim_{animal}} under the direct control of the {source}, they may control
 Makes {aim_{thing}} {effect}.
 Infects {target} with a disease, it's symptons include {landailments}. It is contagious via {contagious}. It is can be cured with {cure}.
 Aliviates {target} of {landailments} they may be suffering from {duration}.
-Heals {target} that are wounded {probably_the healing process is painful} {maybe_the healing process causes hunger}.
+Heals {target} that are wounded{probably_, the healing process is painful}{maybe_, the healing process causes hunger}.{rarely_ They continue to be healed of any future wounds they receive for {duration}.}{rarely_ This healing extends not just to physical wounds, but also to phychological trauma.}
 The following miracle is extremely powerful, it can be negated, deactivated or resisted only by other extremely powerful miracles: <<{sentences}>>
 The following miracle if forced to happen, it must be cast:<<{sentences}>>
 The weather in the region about the {source} becomes {windy\misty\sunny\cloudy\rainy\overcast}{maybe_, it also becomes {much hotter\much colder\a bit hotter\a bit colder}}.{rarely_ The local climate is altered so that this weather state becomes the norm in this region.}
-In the region about the {source} it begins to {rain\snow\hail\rain {stuff}} {duration}.{maybe_ During this time their is also thunder and lightning.} This weather phenomenon {remains static\moves with the wind}.
+In the region about the {source} it begins to {rain\snow\hail\rain {stuff}}{ heavily\ lightly\} {duration}.{maybe_ During this time their is also thunder and lightning.} This weather phenomenon {remains static\moves with the wind}.
 Turns {target} into ware-{animal}s. They transfrom only when exposed to {radiation}, and are otherwise unchanged. While transformed they are wild and aggressive.{maybe_ Anything bitten or scratched by one becomes one.}{rarely_ Death itself does not end the curse, if exposed a corpse will still transform and still be animate and aggresive. Killing them with {stuff} prevents them from ever rising again.}
 Animates all {animatable}s {reach} {duration}. They {loyalty}.
 Animates {aim_{animatable}} {duration}. It {loyalty}.
 Deactivates {a miracle\all miracles} the effects of which lie {at least partially\entirely} {reach}.
-The {next\next {number}} miracle(s) activated {reach} {which last {duration} {or less\or more}\which {don't involve\involve} {stuff}} are resisted, and don't happen.
+The {next\next {number}} miracle(s) activated {reach}{maybe_, which last {duration} {or less\or more}}{maybe_, which {don't involve\involve} {stuff}} are resisted, and don't happen.
 When the following miracle is cast any lasting effects left by previous miracles cast by the {source} are deactivated.<<{sentences}>>
 The {source} is transported to a point {reach} {via teleportation\as a beam of {radiation}\at high speed through the air}.
-Causes {target} to be transported to points {reach} of {their\the {sources}} choice {via teleportation\as a beam of {radiation}\at high speed through the air}.
+Causes {target} to be transported to points {reach} of {their\the {source}'s} choice {via teleportation\as a beam of {radiation}\at high speed through the air}.
 All sources of {radiation1} {reach} instead emit {radiation2} {duration}.
 Translates all {written\spoken} language {reach} into the {source}'s native language {duration}.
 A meteor made of {stuff} comes to Earth {reach} it's impact causes a {magnitude} explosion.
@@ -57,3 +58,13 @@ At a point {reach} a supernatural {colour} fire begins. To this weird fire {land
 Grants an {aperature} {reach} the property that any {{radiation1} to pass through it becomes {radiation2}\{stuff1} to pass through it becomes {stuff2}}, it has this property {duration}.
 Creates a {size}, {colour}, {shape} shaped, feild of power {reach}. All {stuff1} to pass into the feild is turned into {stuff2}. The feild lasts {duration}.
 The laws of nature are mutated {reach} {duration}, such that {stuff1} and {stuff2} undergo {an explosive\an exothermic\an endothermic\a} chemical reaction when they come into contact, producing {stuff3} as a result of the reaction.
+Animates all {plant}'s {reach}. They {loyalty}.
+Their is a disruption in the laws of physics causing {space to fold in on itself creating a seperate pocket dimension\gravity to reverse\time to freeze\all objects to be mirror imaged through their vertical axis} {reach} {duration}.
+Blesses {target}, while blessed if they die they will be reincarnated as the next {animal} to be born. They {retain\loose} all memory of their previous life. If they were a miracle-worker they are {no-longer\still} one.
+Causes {target} to age {half as fast\a quarter as fast\twice as fast\four times as fast\backwards}.
+Summons a {size} {building} {reach}.{rarely_ It is larger on the inside than the outside.}{rarely_ It is impossible to enter without an invitation from it's owner.}{maybe_ It lasts {duration}.}
+Transforms all {building1}s {reach} into {building2}s {duration}. They {retain their origional size\change size as appropriate}.
+Causes {aim_{building}} to {crumble to dust\have it's interior layout shuffled randomly\be possesed by a mischevous bogart\to become alive and grow {limbs}, it {loyalty}}.
+Causes a {magnitude} {increase\decrease} in the {stat} of {target} {duration}.
+The ability of {target} to perform {stat1} based tasks will depend only on their {stat2} {duration}.{maybe_ The inverse is also the case.}
+Makes {target} {effect}.

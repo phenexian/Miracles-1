@@ -7,7 +7,7 @@ store_list=[]
 listlist=['stuff','colour','sentences','reach','magnitude','feeling','target','distance','effect','method',
           'trigger','radiation','animal','loyalty','duration','limbs','size','number','shape','thing',
           'twoparty','action','threat','vesel','aperature','aim','ailments','contagious','cure','adjective',
-          'animatable','chances']
+          'animatable','plant','building','stat','chances']
 
 def openthem(filename):
     lst=[]
@@ -28,6 +28,7 @@ def snip(sentence,word):
     return out
 
 def find(lst,function):
+    global store_list
     lst=lst[1:-1].replace(function,"")
     for i in listlist:
             if i[0]==lst:
@@ -44,7 +45,6 @@ def find(lst,function):
             store_list.remove(a)
             return a
         except:
-            global store_list
             store_list=random.sample(mylist,int(function))
             a=store_list[0]
             store_list.remove(a)
@@ -92,7 +92,7 @@ Enter a word to get a single miracle containing that word:""")
         n=int(userinput)
         for i in range(0,n):
             print "\n"+"-"*60+"\n"
-            print miracle()
+            print cleanup(miracle())
     except:
         i=0
         mirc=miracle()
@@ -102,7 +102,7 @@ Enter a word to get a single miracle containing that word:""")
                 
         print "\n"+"-"*60+"\n"
         if i<1200:
-            print mirc
+            print cleanup(mirc)
         else:
             print "The miracles prove ellusive, none are found."
         
@@ -134,12 +134,39 @@ def explicify(sentence):
         
     return out_sentence
 
+def cleanup(sentence):
+    sentence=sentence.replace("it act","it acts")
+
+    if "it are" in sentence:
+        cut=sentence.split("it are")
+        cut[1]=cut[1].replace("their","it's")
+        sentence=cut[0]+"it is"+cut[1]
+
+    cut=sentence.split(".")
+    sentence=""
+    for i in cut:
+        try:
+            if i[0]==" ":
+                i=" "+i[1].upper()+i[2:]
+            else:
+                i=i[0].upper()+i[1:]
+        
+            sentence=sentence+i+"."
+        except:
+            sentence=sentence+i
+        
+    sentence=sentence.replace("..",".")
+
+    return sentence
+
 def miracle():
     i=0
     sentence=find("{sentences}","")
+    sentence=sentence.lower()
     while "{" in sentence and i<20:
         sentence=explicify(sentence)
         i=i+1
+
     return sentence
 
 def test():

@@ -1,0 +1,14 @@
+castle
+tower
+house
+tent
+temple
+zigrat
+pyrimid
+fort
+amphithearter
+stadium
+cottage
+shed
+pagoda
+labyrinth

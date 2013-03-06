@@ -1,0 +1,19 @@
+oak
+lilly
+rose
+cactus
+elm
+pine
+grass patch
+ivy clump
+thistle
+mushroom
+palm tree
+coconut tree
+chesnut tree
+moss
+bush
+hedge
+brambles
+nettles
+bamboo clump
