@@ -34,12 +34,18 @@ def write(n):
         while n>=i[1]:
             s=s+i[0]*int(n/i[1])
             n=n % i[1]
-     
-    for n in range(2,len(dictionary)):
-        s=s.replace(dictionary[n][0]*4,dictionary[n][0]+dictionary[n-1][0])
+
+    for i in range(0,3):
+        for n in range(1,len(dictionary)):
+            if n%2:
+                s=s.replace(dictionary[n][0]*2,dictionary[n-1][0])
+                s=s.replace(dictionary[n][0]+dictionary[n+1][0]+dictionary[n][0],dictionary[n+1][0]+dictionary[n-1][0])
+            else:
+                s=s.replace(dictionary[n][0]*4,dictionary[n][0]+dictionary[n-1][0])
 
     return s
 
-read(s)
+print read(s)
 
-write(3741)
+print write(3741)
+print write(999)

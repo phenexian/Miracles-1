@@ -68,3 +68,5 @@ Causes {aim_{building}} to {crumble to dust\have it's interior layout shuffled r
 Causes a {magnitude} {increase\decrease} in the {stat} of {target} {duration}.
 The ability of {target} to perform {stat1} based tasks will depend only on their {stat2} {duration}.{maybe_ The inverse is also the case.}
 Makes {target} {effect}.
+All open wounds {reach} {begin to bleed very much more rapidly\become rancid with infection\are fillled with {stuff}\become bandaged\start venting smoke}.
+All wounds {maybe_and diseases} effecting {target1} are transfered to {target2}.
