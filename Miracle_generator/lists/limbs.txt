@@ -15,3 +15,8 @@ a pair of pincers
 a bunch of armoured plates
 a mane
 a turtle-like shell
+a {rarely_{animal}} head 
+eyes{possibly_({magnitude} beams of {radiation} may be fired from these eyes)}
+fangs{possibly_which can {drain the blood of\drain the lifeforce of\drain the magic of\inject a poison, that causes {landailments}, into} victims}
+fins
+frill-like gills

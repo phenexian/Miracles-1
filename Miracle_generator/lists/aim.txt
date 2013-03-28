@@ -1,8 +1,7 @@
 a chosen {x} within {distance} of the {source}
+a chosen {x} within {distance} of the {source}
 a chosen {x} between {distance1} and {distance2} of the {source}
 the nearest {x} to the {source}
-the biggest {x} within {distance}
-the smallest {x} within {distance}
-the most valueable {x} within {distance}
+the {biggest\smallest\most valueable} {x} within {distance} of the {source}
 the {x} the {source} is most familiar with
-the {x} the {source} last touched
+the {x} the {source} {last touched\next touches}

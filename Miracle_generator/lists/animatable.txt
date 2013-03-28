@@ -1,7 +1,7 @@
-shadow
-puppet
-painting
-statue
-doll
-tattoo
-reflection
+{shadow& {The shadow can move freely if the entity that cast it was able to\The shadow must remain attached to the entitiy that cast it, but can otherwise move or extend itself freely}. {The shadow remains two dimesional and intagable\The shadow remains two dimesional. However it may interact with other shadows, resulting in the entities casting them to be affected\The shadow remains two dimesional but can extert a force on anything it is cast on\The shadow may become solid and three dimensional, forming a solid black figure when it does so}. {It can produce any sounds the entity that cast it can produce\It produces eerie echos and screams\It is as silent as any other shadow}} 
+{painting& The objects in the painting can move, and be heard, {but may not go beyond or act beyond the confines of their painting\and may even flit from one painting to another, however they may not go beyond or act beyond the confines of paintings\and may even step out (or be pulled out) of their painting to interact physically with the real world}}{possibly_. The painting has memory of everything that has happened in its line of sight since being painted}
+{statue& The statue {breaks free of any structure it is in and acts freely\remains trapped in any strucuture it is a part of, but can otherwise move}.{possibly_ The statue has memory of everything that has happened in its line of sight since its construction}}
+{doll& The doll can't speak, but may move and act freely{possibly_. The doll is capable of levitating itself}}
+{tattoo& The tattoo {may not leave the body it is on, but it may effect anything that touches it\is skin-bound, but may move from one skin surface to another if they are in contact, it may effect anything that touches it\rises out into space and interacts phyically with the real world}{possibly_. The tatoo has all the knowledge of the person or animal it was tatooed onto}
+{reflection& The reflection leaves the mirror and is a complete duplicate of the entity which cast the reflection}
+{effigy& The effigies must be of {animal}s}

@@ -4,3 +4,6 @@ mouth
 keyhole
 window
 viser
+vally
+entrance
+opening

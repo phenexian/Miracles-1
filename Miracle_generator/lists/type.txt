@@ -1,0 +1,10 @@
+human
+living being
+undead
+animal
+enemy
+ally
+{lover\parent\sibling}
+inanimate object
+summoned creature
+miracleworker

@@ -1,8 +1,9 @@
 explode
 implode
-disapear
-become twice as large
-become ten times as large
-shrink to half their size
-shrink to a tenth of their size
+{disapear\evaporate\warp to another plane}
+become twice as large for {duration}
+become ten times as large for {duration}
+shrink to half their size for {duration}
+shrink to a tenth of their size for {duration}
 become ethereal and ghostly for {duration}
+ignite{possibly_ with {{colour} fire\meta fire}}

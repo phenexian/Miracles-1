@@ -1,4 +1,4 @@
-swap positions with eachother (via teleportation)
+swap positions with eachother (via teleportation) {possibly_this miracle does nothing {duration} after which they swap back}
 swap bodies {duration} with eachother
 swap emotional states with eachother
 fall hopelessly in love with eachother
@@ -6,3 +6,5 @@ hate eachother bitterly
 become mindlinked {duration} with eachother (while midnlinked they may communicate mind to mind)
 swap all poisons and drugs effecting them with eachother
 fuse mind, body and soul into some new being
+become lifelinked (the death or resurection of either results in the same happening to the other) {maybe_they share all physical pain and injury}
+be able to see through eachother's eyes {maybe_and use echother's other senses}

@@ -1,0 +1,8 @@
+drains the blood of victims{rarely_ and store it. Its wielder may use a {size} amount to trigger the following effect <<{sentences}>>
+drains the lifeforce of victims{possibly_ {and grant it to the wielder\and store it. Its wielder may use a {size} amount to trigger the following effect <<{sentences}>>}}
+drains the magic of victims{possibly_ {and grant it to the wielder\and store it. Its wielder may use it to trigger the following effect <<{sentences}>>\and use it to imdediately cast a random miracle}}
+injects a poison, that causes {landailments}, into victims
+can slice through any substance {probably_except {stuff}}
+resists any damage
+{can phase\phases} through {{landstuff}\{landthings}}
+causes any{ {type}\thing} that it strikes to {effect}

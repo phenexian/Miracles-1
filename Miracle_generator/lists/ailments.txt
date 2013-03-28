@@ -2,7 +2,7 @@
 {colour} rashes
 vomiting
 diarrhea
-teeth to fall out
+loss of teeth
 headaches
 disoreintation
 exhaustion
@@ -12,3 +12,4 @@ pregnancy (even in males)
 coughing
 an insatiable appetite for {stuff}
 burns on contact with {radiation}
+the growth of {landlimbs}

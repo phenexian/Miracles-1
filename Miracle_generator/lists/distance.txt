@@ -36,6 +36,3 @@
 5 kilometers
 10 kilometers
 100 kilometers
-a number of meters equal to the age of the {source} in years,
-a number of meters equal to ten times the number of siblings the {source} has,
-a number of meters directly proportional to how desperate the {source} is,

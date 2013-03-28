@@ -7,7 +7,7 @@ store_list=[]
 listlist=['stuff','colour','sentences','reach','magnitude','feeling','target','distance','effect','method',
           'trigger','radiation','animal','loyalty','duration','limbs','size','number','shape','thing',
           'twoparty','action','threat','vesel','aperature','aim','ailments','contagious','cure','adjective',
-          'animatable','plant','building','stat','chances']
+          'animatable','plant','building','stat','chances','enchantments','type']
 
 def openthem(filename):
     lst=[]
@@ -15,7 +15,8 @@ def openthem(filename):
         raw_file=s.readlines()
     
     for i in raw_file:
-        lst.append(i.rstrip())
+        if ":" not in i:
+            lst.append(i.rstrip())
     return lst
 
 def snip(sentence,word):
@@ -42,8 +43,14 @@ def find(lst,function):
     elif function in ["1","2","3"]:
         try:
             a=store_list[0]
-            store_list.remove(a)
-            return a
+            if a in lst:
+                store_list.remove(a)
+                return a
+            else:
+                store_list=random.sample(mylist,int(function))
+                a=store_list[0]
+                store_list.remove(a)
+                return a
         except:
             store_list=random.sample(mylist,int(function))
             a=store_list[0]
@@ -112,10 +119,14 @@ Enter a word to get a single miracle containing that word:""")
 
 def explicify(sentence):
     sentence=fancy_cut(sentence)
-
+    stored="{@}"
     n=0
     while n<len(sentence)-1:
-        if "_" in sentence[n]:
+        if "&" in sentence[n]:
+            cut=sentence[n].split("&")
+            sentence[n]=cut[0][1:]
+            stored=cut[1][0:-1]
+        elif "_" in sentence[n]:
             cut=sentence[n].split("_")
             phrase=find(cut[0]+"}","")
             sentence[n]=phrase.replace("{x}",cut[1][0:-1])
@@ -126,7 +137,8 @@ def explicify(sentence):
 
     for n in ["","land","lor","3","2","1"]:
         sentence = [find(i,n) if i[1:-1].replace(n,"") in zip(*listlist)[0] else i for i in sentence]
-         
+
+    sentence = [stored if i[1:-1]=="@" else i for i in sentence]
     sentence = ["caster" if i[1:-1]=="source" else i for i in sentence]
     out_sentence=""
     for i in sentence:
@@ -162,6 +174,8 @@ def cleanup(sentence):
 def miracle():
     i=0
     sentence=find("{sentences}","")
+    while ":" in sentence:
+        sentence=find("{sentences}","")
     sentence=sentence.lower()
     while "{" in sentence and i<20:
         sentence=explicify(sentence)
