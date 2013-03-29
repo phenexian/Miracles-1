@@ -17,9 +17,9 @@ An enchanted {thing} appears {reach}. It's enchantment is such that when {trigge
 Swarm:
 Calls a {magnitude} swarm of {animal}s from the surrounding country, they {loyalty}.
 One Summon:
-Summons a {size} creature made of {stuff} shaped like a {animal}.{maybe_ It has {landlimbs}.} It {loyalty}.{rarely_ {It may exhale blasts of {stuff}\Once per day it may activate the following effect;<<{sentences-the creature}>>\It is of human like intellect}.}
+Summons a {size} creature {maybe_made of {stuff}} shaped like a {animal}.{maybe_ It has {landlimbs}.} It {loyalty}.{rarely_ {It may exhale blasts of {stuff}\Once per day it may activate the following effect;<<{sentences-the creature}>>\It is of human like intellect}.}
 Many Summon:
-Summons {number} {size} creatures made of {stuff} shaped like {animal}s.{maybe_ They have {landlimbs}.} They {loyalty}.{rarely_ {They may exhale blasts of {stuff}\Once per day they may activate the following effect;<<{sentences-the creature}>>\They are of human like intellect}.}
+Summons {number} {size} creatures {maybe_ made of {stuff}} shaped like {animal}s.{maybe_ They have {landlimbs}.} They {loyalty}.{rarely_ {They may exhale blasts of {stuff}\Once per day they may activate the following effect;<<{sentences-the creature}>>\They are of human like intellect}.}
 Plants summon:
 Summons {size}, {adjective} {plant}s {area}.{rarely_ Dew made of {stuff} gathers on them.}{rarely_ When they are burned the fire burns {very hot\very cold\hot\cold}, and is {colour}.}{rarely_ When eaten they grant whoever ate them the ability to control {{stuff}\{animal}s} {method} {duration}.}
 Avatar:
@@ -158,3 +158,5 @@ People transmute:
 Turns all {persontransmute} {area} into {stuff}.{@}.
 Person transmute:
 Turns {aim_{persontransmute}} {reach} into {stuff}.{@}.
+Many Flight:
+{target} gain the ability to {fly swiftly through the air\fall as slowly as a feather when desired\walk on clouds as if they were stone\levitate themselves via meditation\swim through the air as if it were water\surf through the air on a board made of {stuff}} {duration}.{maybe_ It is {mentally\physically} exhausting to do so.} 
