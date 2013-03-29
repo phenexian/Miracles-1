@@ -9,8 +9,7 @@ everyone who can see the {source}
 everyone within {distance} of the {source} who can't see the {source}
 all animals within {distance} of the {source}
 all humans within {distance} of the {source}
-everything of the same gender as the {source} within {distance} of the {source}
-everything whose gender is the opposite of the {source}'s within {distance} of the {source}
+everything of the {same\opposite} gender as the {source} within {distance} of the {source}
 all miraclewokers within {distance} of the {source}
 the next {number} people within {distance} of the {source} to {action},
 any number of chosen targets within {distance} of the {source}

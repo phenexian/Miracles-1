@@ -7,7 +7,7 @@ store_list=[]
 listlist=['stuff','colour','sentences','reach','magnitude','feeling','target','distance','effect','method',
           'trigger','radiation','animal','loyalty','duration','limbs','size','number','shape','thing',
           'twoparty','action','threat','vesel','aperature','aim','ailments','contagious','cure','adjective',
-          'animatable','plant','building','stat','chances','enchantments','type']
+          'animatable','plant','building','stat','chances','enchantments','type','select','decor','area','persontransmute']
 
 def openthem(filename):
     lst=[]
@@ -133,13 +133,18 @@ def explicify(sentence):
         elif "\\" in sentence[n]:
             cut=sentence[n][1:-1].split("\\")
             sentence[n]=random.choice(cut)
+        elif "sentences-" in sentence[n]:
+            cut=sentence[n].split("-")
+            phrase=find(cut[0]+"}","")
+            for i in range(0,10):
+                phrase=explicify(phrase)
+            sentence[n]=phrase.replace("{source}",cut[1][0:-1])
         n=n+1
 
     for n in ["","land","lor","3","2","1"]:
         sentence = [find(i,n) if i[1:-1].replace(n,"") in zip(*listlist)[0] else i for i in sentence]
 
     sentence = [stored if i[1:-1]=="@" else i for i in sentence]
-    sentence = ["caster" if i[1:-1]=="source" else i for i in sentence]
     out_sentence=""
     for i in sentence:
         out_sentence=out_sentence+i
@@ -166,21 +171,21 @@ def cleanup(sentence):
             sentence=sentence+i+"."
         except:
             sentence=sentence+i
-        
-    sentence=sentence.replace("..",".")
+
+    for i in ["..",",."]:
+        sentence=sentence.replace(i,".")
 
     return sentence
 
 def miracle():
     i=0
     sentence=find("{sentences}","")
-    while ":" in sentence:
-        sentence=find("{sentences}","")
     sentence=sentence.lower()
     while "{" in sentence and i<20:
         sentence=explicify(sentence)
         i=i+1
 
+    sentence = sentence.replace("{source}","caster")
     return sentence
 
 def test():

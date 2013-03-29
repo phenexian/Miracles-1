@@ -1,4 +1,4 @@
-swap positions with eachother (via teleportation) {possibly_this miracle does nothing {duration} after which they swap back}
+swap positions with eachother (via teleportation){possibly_ this miracle does nothing {duration} after which they swap back}
 swap bodies {duration} with eachother
 swap emotional states with eachother
 fall hopelessly in love with eachother

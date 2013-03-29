@@ -1,28 +1,28 @@
 Transmute:
-Turns all {stuff1} {reach} into {stuff2}.
+Turns all {stuff1} {area} into {stuff2}.
 Recolour:
-Recolours everything {colour1} {reach} {colour2}.
+Recolours everything {colour1} {area} {colour2}.
 Transmute radiation:
-Turns all {radiation1} {reach} into {radiation2}.
+Turns all {radiation1} {area} into {radiation2}.
 Emote:
 Causes {magnitude} {feeling} in {target}.
 Colourmagic:
-Makes everything {lorcolour} {reach} {effect}.
+Makes everything {lorcolour} {area} {effect}.
 Manipulate matter:
 Causes {target} to have the ability to control {landstuff} {method} {duration}.
 Enchant:
-Enchants {aim_{thing}} to have the property such that when {trigger} it has the following effect;<<{sentences}>>
+Enchants {aim_{thing}} to have the property such that when {trigger} it has the following effect;<<{sentences-user of the item}>>
 Invent:
-An enchanted {thing} appears {reach}. It's enchantment is such that when {trigger} it has the following effect;<<{sentences}>>{possibly_ Once conjured the item lasts {duration}.}{rarely_ The item can in principle be manufactured in greater numbers if it is researched thoroughly by skilled workers. Making them out of {common materials\pricey materials\very rare materials} is {very difficult\easy\moderately complicated}.}
+An enchanted {thing} appears {reach}. It's enchantment is such that when {trigger} it has the following effect;<<{sentences-user of the item}>>{possibly_ Once conjured the item lasts {duration}.}{rarely_ The item can in principle be manufactured in greater numbers if it is researched thoroughly by skilled workers. Making them out of {common materials\pricey materials\very rare materials} is {very difficult\easy\moderately complicated}.}
 Swarm:
 Calls a {magnitude} swarm of {animal}s from the surrounding country, they {loyalty}.
-Many Summon:
-Summons a {size} creature made of {stuff} shaped like a {animal}. It has {landlimbs}. It {loyalty}.
 One Summon:
-Summons {number} {size} creatures made of {stuff} shaped like {animal}s. They have {landlimbs}. They {loyalty}.
+Summons a {size} creature made of {stuff} shaped like a {animal}.{maybe_ It has {landlimbs}.} It {loyalty}.{rarely_ {It may exhale blasts of {stuff}\Once per day it may activate the following effect;<<{sentences-the creature}>>\It is of human like intellect}.}
+Many Summon:
+Summons {number} {size} creatures made of {stuff} shaped like {animal}s.{maybe_ They have {landlimbs}.} They {loyalty}.{rarely_ {They may exhale blasts of {stuff}\Once per day they may activate the following effect;<<{sentences-the creature}>>\They are of human like intellect}.}
 Plants summon:
-Summons {size}, {adjective} {plant}s {reach}.
-avatar:
+Summons {size}, {adjective} {plant}s {area}.{rarely_ Dew made of {stuff} gathers on them.}{rarely_ When they are burned the fire burns {very hot\very cold\hot\cold}, and is {colour}.}{rarely_ When eaten they grant whoever ate them the ability to control {{stuff}\{animal}s} {method} {duration}.}
+Avatar:
 Conjures an avatar {reach}, the avatar is a {size} manifestation of {feeling}, it {loyalty}.
 Conjour:
 Creates a {size} {shape} of {stuff} {reach}.
@@ -31,7 +31,7 @@ The {source} has a high degree of control over the following miracle, any of its
 FX:
 <<{sentences}>> The miracle's activation is accompanied by a {magnitude} flash of {colour} light.
 Beam:
-A {magnitude} beam of {radiation} is fired from the {source},{probably_ anything successfully hit by it {effect}}.
+A {magnitude} beam of {radiation} is fired from the {source},{probably_ anything successfully hit by it is made to {effect}}.
 Transmute feeling:
 All instances of {feeling1} in {target} are replaced with feelings of {feeling2} of approximately equal magnitude.{maybe_ This effect lasts {duration}.}
 Portal:
@@ -43,9 +43,9 @@ Curses {target} {duration}. While cursed they {effect} when exposed to {radiatio
 Transform creature:
 Turns {target} into {size} creatures made of {stuff} shaped like {animal}s. They have {landlimbs}.
 Transform Item:
-Turns all {thing1}s {reach} into {thing2}s.
+Turns all {thing1}s {area} into {thing2}s.
 Generic magic:
-All {thing}s {reach} {effect}.
+All {thing}s {area} {effect}.
 Transmute limbs:
 Causes {target} who have {limbs1}, to have them mutate into {limbs2} {duration}.
 Manipulate animal:
@@ -55,7 +55,7 @@ This spell raises the dead. {target} are raised as zombies {duration}. They {loy
 Ghost:
 This spell raises the dead. {target} are raised as ghosts, they are banished on contact with {radiation}. They {loyalty}.
 Two party:
-Causes (twotarget) to {twoparty}.
+Causes {select1} and {select2} to {twoparty}.
 Immunity:
 Causes {target} to be completely immune to harm or pain as a result of {threat} {duration}.
 Vulnerability:
@@ -63,9 +63,9 @@ Causes {target} to be extremely vulnerable to harm from {threat} {duration}.
 Compel:
 Compels {target} to {action}.
 Many fill:
-Fills all {vesel}s {reach} with {stuff}.
+Fills all {vesel}s {area} with {stuff}.{rarely_ They continue to be re-filled with this whenever new space appears in them {duration}}
 One fill:
-Fills {aim_{vesel}} with {stuff}.
+Fills {aim_{vesel}} with {stuff}.{possibly_ It continues to be re-filled with this whenever new space appears in it {duration}}
 Tame:
 Places {aim_{animal}} under the direct control of the {source}, they may control it {method}.
 Aim magic:
@@ -80,33 +80,36 @@ Extremely powerful:
 The following miracle is extremely powerful, it can be negated, deactivated or resisted only by other extremely powerful miracles; <<{sentences}>>
 Forced:
 The following miracle if forced to happen, it must be cast;<<{sentences}>>
-Forecast:
-The weather in the region about the {source} becomes {windy\misty\sunny\cloudy\rainy\overcast}{maybe_, it also becomes {much hotter\much colder\a bit hotter\a bit colder}}.{rarely_ The local climate is altered so that this weather state becomes the norm in this region.}
-{In a {size} region about\In a {size} region within {distance} of} the {source} it begins to {rain\snow\hail\rain {stuff}}{ heavily\ lightly\} {duration}.{maybe_During this time there is also thunder and lightning.} This weather phenomenon {remains static\moves with the wind}.
+Forecast1:
+The weather in a {size} region {about the {source}\within {distance} of the {source}\somewhere in the world} becomes {windy\misty\sunny\cloudy\rainy\overcast}{maybe_, it also becomes {much hotter\much colder\a bit hotter\a bit colder}}.{rarely_ The local climate is altered so that this weather state becomes the norm in this region.}
+Forecast2:
+{In a {size} region about\In a {size} region within {distance} of} the {source} it begins to {rain\snow\hail\rain {stuff}}{ heavily\ lightly\} {duration}.{possibly_ During this time there is also thunder and lightning.} This weather phenomenon {remains static\moves with the wind}.{rarely_ The local climate is altered so that this weather state becomes the norm in this region.}
 Wareform:
 Turns {target} into ware-{animal}s. They transform only when exposed to {radiation}, and are otherwise unchanged. While transformed they are wild and aggressive.{maybe_ Anything bitten or scratched by one becomes one.}{rarely_ Death itself does not end the curse, if exposed a corpse will still transform and still be animate and aggressive. Killing them with {stuff} prevents them from ever rising again.}
 many animate:
-Animates all {animatable}s {reach} {duration}.{@}. They {loyalty}.
+Animates all {animatable}s {area} {duration}.{@}. They {loyalty}.
 one animate:
 Animates {aim_{animatable}} {duration}.{@}. It {loyalty}.
 Dispell:
-Deactivates {a miracle\all miracles} the effects of which lie {at least partially\entirely} {reach}.
+Deactivates {a miracle\all miracles} the effects of which lie {at least partially\entirely} {area}.
 Counterspell:
 The {next\next {number}} miracle(s) activated {reach}{maybe_, which last {duration} {or less\or more}}{maybe_, which {don't involve\involve} {stuff}} are resisted, and don't happen. {maybe_This ability to resist miracles lasts {duration}.}
 Deactivate previous:
 When the following miracle is cast any lasting effects left by previous miracles cast by the {source} are deactivated.<<{sentences}>>
+Delay:
+This does nothing {duration} then the following effect occurs;<<{sentences}>>.{possibly_ When this is cast a {burning candle\pocket-watch\hourglass} appears in in the hand of the {source}, it tracks the time remaining until the effect happens. When the effect does happen the timekeeping item vanishes.}
 Transport self:
 The {source} is transported to a point {reach} {via teleportation\as a beam of {radiation}\at high speed through the air}.
 Transport target:
 Causes {target} to be transported to points {reach} of {their\the {source}'s} choice {via teleportation\as a beam of {radiation}\at high speed through the air}.
 Transmute radiation source:
-All sources of {radiation1} {reach} instead emit {radiation2} {duration}.
+All sources of {radiation1} {area} instead emit {radiation2} {duration}.
 Translate:
-Translates all {written\spoken} language {reach} into the {source}'s native language {duration}.
+Translates all {written\spoken} language {area} into the {source}'s native language {duration}.
 Meteor:
 A meteor {probably_made of {stuff}} comes to Earth {reach} it's impact causes a {magnitude} explosion.
 Natural disaster:
-There is a {magnitude} {earthquake\tidal wave\volcanic erruption\tornado} in the region of the {source}.
+There is a {magnitude} {earthquake\tidal wave\volcanic erruption\tornado} {about the {source}\within {distance} of the {source}\somewhere in the world\in the place where one could cause the maximum amount of damage and inflict the greatest number of casualties}.
 Spirit:
 Binds a spirit within {aim_{vesel}}. It can be released only by {it's vessel being rubbed\it's vessel being destoryed\it's vessel being opened up\it's true name being spoken aloud three times}, the spirit's supernatural powers are {magnitude}, it will bargain for freedom. It is {good to it's word\a liar\truthful, but lawyerly with promises}.
 Arcane fire:
@@ -116,21 +119,25 @@ Grants an {aperature} {reach} the property that any {{radiation1} to pass throug
 Trasumuting field:
 Creates a {size}, {colour}, {shape} shaped, field of power {reach}. All {stuff1} to pass into the field is turned into {stuff2}. The field lasts {duration}.
 Reaction:
-The laws of nature are mutated {reach} {duration}, such that {stuff1} and {stuff2} undergo {an explosive\an exothermic\an endothermic\a} chemical reaction when they come into contact, producing {stuff3} as a result of the reaction.
+The laws of nature are mutated {area} {duration}, such that {stuff1} and {stuff2} undergo {an explosive\an exothermic\an endothermic\a} chemical reaction when they come into contact, producing {stuff3} as a result of the reaction.
+New Force:
+The laws of nature are mutated {area} {duration}, such that their is a {magnitude} {attractive\repulsive} force between {stuff1} and {stuff2} in that area.
+Properties:
+All {stuff1} {area} becomes as {hard/soft\heavy/light\strong/weak} as {stuff2} {duration}.
 Animate plant:
-Animates all {plant}'s {reach}. They {loyalty}.
+Animates all {plant}s {area}. They {loyalty}.
 Physics:
-There is a disruption in the laws of physics causing {space to fold in on itself creating a separate pocket dimension\gravity to reverse\time to freeze\all objects to be mirror imaged through their vertical axis} {reach} {duration}.
+There is a disruption in the laws of physics causing {space to fold in on itself creating a separate pocket dimension\gravity to reverse\time to freeze\all objects to be mirror imaged through their vertical axis} {area} {duration}.
 Bless:
 Blesses {target}, while blessed if they die they will be reincarnated as the next {animal} to be born. They {retain\loose} all memory of their previous life. If they were a miracle-worker they are {no-longer\still} one.
 Aging:
 Causes {target} to age {half as fast\a quarter as fast\twice as fast\four times as fast\backwards}.
 Building summon:
-Summons a {size} {building} {reach}.{rarely_ It is larger on the inside than the outside.}{rarely_ It is impossible to enter without an invitation from it's owner.}{maybe_ It lasts {duration}.}
+A {size} {building} {instantaneously appears\is built rapidly by a workforce of ghostly spririts\falls from the sky (undamaged)\bursts out of the ground} {reach}. Its insides are decorated in a {decor} way.{rarely_ It is larger on the inside than the outside.}{rarely_ It is impossible to enter without an invitation from it's owner.}{maybe_ It lasts {duration}.}
 Building transform:
-Transforms all {building1}s {reach} into {building2}s {duration}. They {retain their original size\change size as appropriate}.
+Transforms all {building1}s {area} into {building2}s {duration}. They {retain their original size\change size as appropriate}.
 Change building:
-Causes {aim_{building}} to {crumble to dust\have it's interior layout shuffled randomly\be possessed by a mischievous being\become immune to external magics\become alive and grow {landlimbs}, it {loyalty}}.
+Causes {aim_{building}} to {crumble to dust\have it's interior layout shuffled randomly\be possessed by a mischievous being\become immune to external magics\become alive and grow {landlimbs}, it {loyalty}\have its insides redecorated to be {decor}}.
 Stat Change:
 Causes a {magnitude} {increase\decrease} in the {stat} of {target} {duration}.
 Stat swap:
@@ -138,10 +145,16 @@ The ability of {target} to perform {stat1} based tasks will depend only on their
 Target magic:
 Makes {target} {effect}.
 Change wound:
-All open wounds {reach} {begin to bleed very much more rapidly\become rancid with infection\are filled with {stuff}\become bandaged\start venting smoke}.
+All open wounds {area} {begin to bleed very much more rapidly\become rancid with infection\are filled with {stuff}\become bandaged\start venting smoke}.
 Transfer injury:
 All wounds {maybe_and diseases} effecting {target1} are transferred to {target2}.
 Weapon enchant:
 Enchants {aim_{thing}} so that it {enchantments}.
 Empty Plane:
 The {source} is transported to an infinite {colour2} plane beneath a {colour1} sky. The plane is {smooth and flat as glass\wrinkled like old leather\squelchy and sticky as tar\flat, but with numerous bottomless pits\covered in rolling hills}. Any distance moved in this plane corresponds to a distance {number2} times {bigger\smaller} in the real world, similarly for any amount of time that passes in this plane {number1} times {more\less} time pass in the real world. The {source} stays on this plane {duration} (in local time) before returning to the real world.
+Shoot:
+Fires {number} {thing}s {maybe_made of {stuff} }at {high speed\low speed\an incredible speed\a snails pace} from the {source}.
+People transmute:
+Turns all {persontransmute} {area} into {stuff}.{@}.
+Person transmute:
+Turns {aim_{persontransmute}} {reach} into {stuff}.{@}.

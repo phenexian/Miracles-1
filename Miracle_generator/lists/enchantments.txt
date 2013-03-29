@@ -1,8 +1,12 @@
-drains the blood of victims{rarely_ and store it. Its wielder may use a {size} amount to trigger the following effect <<{sentences}>>
+drains the blood of victims{rarely_ and store it. Its wielder may use a {size} amount to trigger the following effect <<{sentences}>>}
 drains the lifeforce of victims{possibly_ {and grant it to the wielder\and store it. Its wielder may use a {size} amount to trigger the following effect <<{sentences}>>}}
 drains the magic of victims{possibly_ {and grant it to the wielder\and store it. Its wielder may use it to trigger the following effect <<{sentences}>>\and use it to imdediately cast a random miracle}}
 injects a poison, that causes {landailments}, into victims
 can slice through any substance {probably_except {stuff}}
 resists any damage
-{can phase\phases} through {{landstuff}\{landthings}}
+{can phase\phases} through {{landstuff}\{landthing}}
 causes any{ {type}\thing} that it strikes to {effect}
+can interact physically with ethereal, ghostly and incorporeal entities
+glows a brighter and brighter {colour} the closer the nearest {type} is
+turns whoever is touching it {colour} so long as they are touching it
+injures all close blood relatives of anyone injured by it, as well as themselves (they sustain an identical injury)

@@ -1,5 +1,4 @@
 within {distance} of the {source}
-within {maybe_{distance} and within} sight of the {source}
+within{maybe_ {distance} and within} sight of the {source}
 in contact with the {source}{maybe_ or connected to the {source} via an unbroken network of {landstuff},}
 between {distance1} and {distance2} of the {source}
-within an area of raidus {distance1} centred within {distance2} of the {source},

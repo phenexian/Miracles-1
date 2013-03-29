@@ -1,0 +1,12 @@
+an ally within {distance} of the {source}
+an enemy within {distance} of the {source}
+someone within {distance} of the {source}
+a summoned creature within {distance} of the {source}
+an undead being within {distance} of the {source}
+someone within the {source}'s line of sight
+the {source}
+an animal within {distance} of the {source}
+a human within {distance} of the {source}
+something of the {same\opposite} gender as the {source} within {distance} of the {source}
+a miraclewoker within {distance} of the {source}
+the next person within {distance} of the {source} to {action},
